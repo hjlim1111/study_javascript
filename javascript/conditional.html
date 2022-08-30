@@ -43,7 +43,76 @@
             alert(4);
         }
         alert(5);
-        // 5만 경고창에 출력됨. false이기 때문에 중괄호 구간이 실행되지 않음
+        // 5만 경고창에 출력됨. false이기 때문에 중괄호 구간이 실행되지 않음.
+
+
+
+
+
+        /*
+        [조건문 문법]
+        else : if 만으로는 좀 더 복잡한 상황을 처리하는데 부족하여 사용
+                즉 else는 주어진 조건이 거짓일 때 실행할 구간을 정의하는 것이다
+        */
+        if(true){
+            alert(1);
+        } else {
+            alert(2);
+        }
+        // 경고창에 1이 출력
+
+        if(false){
+            alert(1);
+        } else {
+            alert(2);
+        }
+        // 경고창에 2가 출력
+
+
+
+
+        /*
+        [조건문 문법]
+        else if
+        ; 좀 더 다양한 케이스의 조건을 검사할 수 있는 기회를 제공.
+          else if의 특징은 if나 else와는 다르게 여러개가 올 수 있다는 점
+          else if의 모든 조건이 false라면 else가 실행된다. else는 생략 가능
+        */
+        if(false){
+            alert(1);
+        } else if(true){
+            alert(2);
+        } else if(true){
+            alert(3);
+        } else {
+            alert(4);
+        }
+        // 경고창에 2가 출력
+
+        if(false){
+            alert(1);
+        } else if(false){
+            alert(2);
+        } else if(true){
+            alert(3);
+        } else {
+            alert(4);
+        }
+        // 경고창에 3이 출력
+
+        if(false){
+            alert(1);
+        } else if(false){
+            alert(2);
+        } else if(false){
+            alert(3);
+        } else {
+            alert(4);
+        }
+        // 경고창에 4가 출력
+
+
+
     </script>
 </body>
 </html>
