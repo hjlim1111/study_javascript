@@ -7,6 +7,43 @@
     <title>조건문</title>
 </head>
 <body>
-    
+    <script type="text/javascript">
+        // 조건문(conditional statement) : 주어진 조건에 따라 애플리케이션을 다르게 동작하도록 하는 것
+
+        /*
+        [조건문 문법]
+        if : 조건문은 if로 시작. if 뒤의 괄호에 조건이 오고, 조건이 될 수 있는 값은 boolean이다.
+             boolean의 값이 true라면 조건이 담겨진 괄호 다음의 중괄호 구문이 실행됨
+        */
+       if(true){
+        alert('result : true');
+       }
+       // 실행결과 result : true 이다. if 뒤에 true가 왔기 때문
+       if(false){
+        alert('result : true');
+       } 
+       // 실행되지 않음
+
+       // 조건문과 boolean은 뗄수 없는 관계
+
+       //ex)
+       if(true){
+            alert(1);
+            alert(2);
+            alert(3);
+            alert(4);
+        }
+        alert(5); 
+        // 1,2,3,4,5 의 경고창이 출력됨
+
+        if(false){
+            alert(1);
+            alert(2);
+            alert(3);
+            alert(4);
+        }
+        alert(5);
+        // 5만 경고창에 출력됨. false이기 때문에 중괄호 구간이 실행되지 않음
+    </script>
 </body>
 </html>
