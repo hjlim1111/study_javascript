@@ -39,12 +39,13 @@
          ex) alert(1 == "1"); // 결과값 true
          ㄴ  1은 숫자 데이터 타입이고, "1"은 문자 데이터 타입이지만 실질적으로 가자고 있는 1의 의미가 동일히기에 true가 출력됨
         */
+       // 비슷하면 같은걸로 취급하는 이 연산자는 별로 사용을 추천하지 않는다.
 
 
         alert(1 === "1"); // 결과값 false
         alert(1 == "1"); // 결과값 true
         /*
-        일치 연산자 (strict equal operator)
+        ★ 일치 연산자 (strict equal operator)
         ===
         ; 좌항과 우항이 '정확'하게 같을 때 true, 다르면 false
          ㄴ === 일치 연산자의 경우는 좌항과 우항의 정보가 같을 뿐 만 아니라 데이터의 형식도 정확하게 일치해야만 true 가 됨
@@ -52,9 +53,48 @@
          ㄴ 1은 숫자 데이터 타입이고, "1"은 문자 데이터 타입이기 때문에 같은 1이라도 다른 데이터 형식을 가져 false가 출력됨
         */
 
-        
 
-        //
+        alert(undefined == null); // true 출력
+        alert(undefined === null); // false 출력
+        // null : 값이 없는 (프로그래머가 의도적으로 값을 부여하지 않음을 의미)
+        // undefined : 값이 정의되지 않음 (프로그래머가 의도하지 않은 상황)
+
+
+        /*
+        [데이터타입]
+
+        Boolean
+        : true / false (는 데이터의 형식) 
+
+        Number
+        : -1, 0, 1, 2, 3....
+        
+        String
+        : "a", "b", "c"...
+ 
+        Undefined
+        : undefined
+
+        Null
+        : null
+        */
+
+        alert(true); // true 출력
+        alert(true == 1); // true 출력
+        alert(true == 2); // false 출력
+        alert(true == 3); // false 출력
+        alert(true == '1'); // true 출력
+        alert(true === 1); // false 출력
+        alert(true === '1'); // false 출력
+        alert(0 === -0); // true 출력(양수든 음수든 가장 중간에 있는 0이기에 true)
+        alert(NaN === NaN); // false 출력
+        // 0/0; // NaN 출력 => 성립하지 않는 수
+
+        // javascript에서 동등연산자(==)는 숫자,문자 1을 true로 간주. 그외 숫자 1이 아닌 수를 false로 간주
+        //일치연산자(===)는 false로 간주
+        // NaN : 0/0과 같은 연산의 결과로 만들어지는 특수한 데이터 형인데 숫자가 아니라는 뜻(계산할 수 없음)
+
+
     </script>
 </body>
 </html>
