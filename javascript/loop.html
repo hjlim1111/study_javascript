@@ -7,9 +7,11 @@
     <title>반복문</title>
 </head>
 <body>
+    <!--
     HELLO WORLD;<br>
     HELLO WORLD;<br>
     HELLO WORLD;<br>
+    -->
     <script type="text/javascript">
         document.write("Coding every<br>body<br>");
         //document.write은 html에서 직접 입력하지 않고 javascript로 입력이 가능
@@ -28,9 +30,66 @@
         }
         조건이 true에서 false가 될 때까지 조건문을 반복함
         */
+        /*
         while(true){
-            
+            document.write("Coding every body<br>");
         }
+        무한루프
+        ;멈추지 않고 계속 반복적으로 Coding every body<br>이 출력 됨
+        */
+       //무한루프가 되지 않으려면 true가 적당한 시간에 false로 변경이 되면 된다.
+
+        while(false){
+            document.write("Coding every body<br>");
+        } //  false라 실행되지 않음
+
+
+
+
+        /*
+        [반복조건]
+        무한대로 작동되는 반복문을 중단시킬 수 있는 방법
+        */ 
+       var i = 0;
+       while(i < 10){
+            document.write("Coding every body " + i + "<br>");
+            i = i +1;
+       }
+       
+       // i < 10 이 true일 때 까지만 반복문이 실행되고 false가 되는 i 값이 10일 떄 작동이 멈춤
+       /*
+       이 로직을 보았을 때 while의 문제점이 있음 
+       언제까지 반복될 것인가 하는 i라는 변수를 초기화 하는 부분, 반복적으로 실행될 때 마다 i 값을 갱신해주는 반복실행, 반복을 계속 진행할 것인가를 체크하는 반복조건
+       3가지로 구성되어 있음
+       밀접하게 필요하는 3가지 구성을 묶어 놓으면 편함-> for
+       whlie은 구성이 묶여있지 않고 각각이 떨어져 있기 때문에 중간에 다른 값이 들어갈 수 있고, 그럼 내가 원하는 값이 출력되지 않을 수 있음
+       */
+
+       /*
+       <for>
+       구성요소를 묶어놓음
+       단점: 각각의 구성요소들의 순서를 기억하고 있어야 함
+        for(초기화 [for문이 실핼될 때 제알 먼저 한 번만 실행됨]; 반복조건; 반복이 될 때마다 실행되는 코드){
+        반복해서 실행될 코드
+        }
+       */
+       for(var i = 0; i < 10; i++){
+            document.write("Coding every body " + i + "<br>");
+       }
+       // "i = i + 1" = "i++"(구문이 실행될 때 마다 1씩 증가)
+       /*
+       i++
+       ++i
+
+       i = 0;
+       alert(i++); 을 하면 i++에 숫자 0이 들어옴. alert이 실행된 후 1이 증가 (사용하고 난 뒤 증가)
+
+       i = 0;
+       alert(++i); 을 하면 사용할 때 1을 증가시킴
+       */
+
+       // 반복문에는 관습적으로 iterate의 약자인 i를 사용하여 반복문의 사용되고 있는 기준점이라는 것을 보여줌
+
     </script>
 </body>
 </html>
