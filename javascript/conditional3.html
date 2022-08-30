@@ -8,7 +8,123 @@
 </head>
 <body>
     <script type="text/javascript">
-        
+        /*
+        [논리연산자 &&]
+
+        && : and(그리고)
+        ; 좌항과 우항이 모두 참일 경우에만 전체가 참이 되는 연산자
+        ; 여러개의 boolean을 조합해서 하나의 boolean으로 할 수 있음
+        ex)
+            if(true && true){
+                alert(1);
+            }
+            좌항과 우항이 모두 참일 경우에만 전체가 참이 되는 연산자
+        */
+        if(true && true){
+            alert(1);
+        }
+        // if(true){alert(1);} 이기에 결과값이 1이 출력
+
+        if(true && false){
+            alert(2);
+        }
+        // if(false){alert(2);} 이기에 출력하지 않음
+
+        if(false && true){
+            alert(3);
+        }
+        // if(false){alert(3);} 이기에 출력하지 않음
+
+        if(false && false){
+            alert(4);
+        }
+        // if(false){alert(4);} 이기에 출력하지 않음
+
+
+        //논리연산자 AND를 사용하였을 때
+        var id = prompt('아이디를 입력해주세요.');
+        var password = prompt('비밀번호를 입력해주세요.');
+        if(id === 'admin' && password === '111111'){
+            alert('로그인 하셨습니다. ' + id + '님 반갑습니다.');
+        } else {
+            alert('아이디, 비밀번호가 일치하지 않습니다.');
+        }
+
+
+        /*
+        [논리연산자 ||]
+
+        || : or(또는)
+        ; 좌항과 우항 둘 중 하나라도 true라면 true가 되는 연산자
+        */
+        if(true || true){
+            alert(1);
+        }
+        // if(true){alert(1);} 이기에 결과값이 1이 출력
+
+        if(true || false){
+            alert(2);
+        }
+        // if(true){alert(2);} 이기에 결과값이 2가 출력
+
+        if(false || true){
+            alert(3);
+        }
+        // if(true){alert(3);} 이기에 결과값이 3이 출력
+
+        if(false || false){
+            alert(4);
+        }
+        // if(false){alert(4);} 이기에 출력하지 않음
+
+
+        //논리연산자 OR를 사용하였을 때
+        id = prompt('아이디를 입력해주세요.');
+        if(id === 'admin' || id === 'gywjd' || id === 'g123'){ // id가 admin, gywjd, g123 셋 중 하나라도 성립한다면 true
+            alert('인증 했습니다.');
+        } else {
+            alert('인증에 실패 했습니다.');
+        }
+
+
+        // AND 와 OR 모두 사용하였을 경우
+        // id가 admin, gywjd, g123 인 사용자가 비밀번호 111111일 때 성립되는 경우
+        id = prompt('아이디를 입력해주세요.');
+        password = prompt('비밀번호를 입력해주세요.');
+        if((id === 'admin' || id === 'gywjd' || id === 'g123') && password === '111111'){
+            alert('인증하였습니다.');
+        } else {
+            alert('인증에 실패하였습니다.');
+        }
+
+
+
+        /*
+        [연산자 !]
+        ! : not
+        ; 부정의 의미, boolean의 값을 역전시킴
+        true를 false로 false를 true로
+        */
+        if(!true && !true){
+            alert(1);
+        }
+        // if(false){alert(1);} 이기에 출력하지 않음
+
+        if(!false && !true){
+            alert(2);
+        }
+        // if(false){alert(2);} 이기에 출력하지 않음
+
+        if(!true && !false){
+            alert(3);
+        }
+        // if(false){alert(3);} 이기에 출력하지 않음
+
+        if(!false && !false){
+            alert(4);
+        }
+        // if(true){alert(4);} 이기에 결과값이 4가 출력
+
     </script>
 </body>
 </html>
