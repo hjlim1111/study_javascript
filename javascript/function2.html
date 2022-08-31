@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수의 효용</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function numbering(){
+            var i = 0;
+            while(i < 20){
+                document.write(i + "<br>");
+                i += 1;
+            } 
+        }
+        for(var i = 0; i < 1000; i++){
+            numbering();
+        }
+        
+        // 이 부분은 꼭 함수를 쓰지 않고 for문으로도 사용이 가능함
+        /*
+        ex)
+        for(var i = 0; i < 1000; i++){
+            var i = 0;
+            while(i < 20){
+                document.write(i + "<br>");
+                i += 1;
+            }
+        }
+
+        반복문과 함수를 비교하였을 때
+        반복문은 기계적으로 일정한 반복을 그 자리에서 실행할 때 의미가 있음
+        함수는 반복적으로 실행되는 로직이 여러가지 맥락에서 반복되어서 사용되어야 하는 경우는 함수가 의미가 있음
+        */
+
+        /*
+        함수를 사용하면 유지보수가 용이하고, 코드의 가독성이 좋아질 수 있음
+        */
+    </script>
+</body>
+</html>
