@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swap</title>
+</head>
+<body>
+    <script>
+        // cup1과 cup2의 값만 변경하기
+
+        let cup1 = 54;
+        let cup2 = 142;
+
+        console.log(cup1, cup2);
+
+        // 새로운 컵 cup3을 만든다
+        // cup3에 cup1을 옮겨
+        // cup2를 cup1에 옮겨
+        // cup3을 cup2에 옮겨
+        let cup3;
+        cup3 = cup1;
+        cup1 = cup2;
+        cup2 = cup3;
+
+        console.log(cup1, cup2);
+    </script>
+</body>
+</html>

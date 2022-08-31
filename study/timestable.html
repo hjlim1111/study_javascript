@@ -8,23 +8,58 @@
 </head>
 <body>
     <script type="text/javascript">
-        for(var number = 1; number < 10; number++){
-            for(var num = 1; num < 10; num++){
-                document.write(number*num);
+        // for 문 변수 네이밍
+        // 첫번째 뎁스: i
+        // 두번쨰 뎁스: j
+
+
+        // const 상수 - 처음에는 무조건 const 사용. 값이 변경될 것 같으면 let으로 변경
+        // let 변수
+
+        for(var i = 1; i < 10; i++){
+            for(var j = 1; j < 10; j++){
+                const result = i*j; // * 한번만 사용
+                document.write(result);
+                console.log(result); // 따로 동일한 코드를 적어서 console.log로 하지 않아도 이렇게 작성하면 볼 수 있음
             }
-            if (number < 9){
+            if (i < 9){
                 document.write("<br>");
-            } else{
+            } else{ // 불필요한 코드
                 document.write("");
             }
         }
 
-        // console.log
+
+        // 위 코드와 동일한 코드인데 *가 중복해서 들어가져있음
+        // 위 코드처럼 하면 cpu에 무리가 가지 않고 메모리가 추가되며, 아래 로직으로 하면 cpu에 무리가 감. * 중복 사용으로
         for(var number = 1; number < 10; number++){
             for(var num = 1; num < 10; num++){
+                document.write(number*num);
                 console.log(number*num);
             }
+            if (number < 9){
+                document.write("<br>");
+            } else{ // 불필요한 코드
+                document.write("");
+            }
         }
+        
+
+        /*
+        do {
+
+        } while(true)
+        */
+
+        /*
+        동일한 코드를 적지 않고, 23번째 줄에 한 줄만 넣으면 이 모든 코드가 필요가 없어짐
+         console.log
+         for(var number = 1; number < 10; number++){
+             for(var num = 1; num < 10; num++){
+                 console.log(number*num);
+             }
+         }
+         */
     </script>
 </body>
 </html>
