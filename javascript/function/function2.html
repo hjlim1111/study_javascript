@@ -9,21 +9,21 @@
 <body>
     <script type="text/javascript">
         function numbering(){
-            var i = 0;
+            let i = 0;
             while(i < 20){
                 document.write(i + "<br>");
                 i += 1;
             } 
         }
-        for(var i = 0; i < 1000; i++){
+        for(let i = 0; i < 1000; i++){
             numbering();
         }
         
         // 이 부분은 꼭 함수를 쓰지 않고 for문으로도 사용이 가능함
         /*
         ex)
-        for(var i = 0; i < 1000; i++){
-            var i = 0;
+        for(let i = 0; i < 1000; i++){
+            let i = 0;
             while(i < 20){
                 document.write(i + "<br>");
                 i += 1;
