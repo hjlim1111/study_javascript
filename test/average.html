@@ -9,7 +9,17 @@
 <body>
     <script>
         let subject = prompt('과목의 점수를 입력하여주세요.')
-        if(subject >= 60){
+
+        function average(){
+            return [('value1' + 'value2' + 'value3')/3]
+        }
+        let values = average();
+        0 <= values[0] < 100;
+        0 <= values[1] < 100;
+        0 <= values[2] < 100;
+
+        if(values >= 60){
+            value1 > 40 && value2 > 40 && value3 > 40
             alert('합격');
         } else {
             alert('불합격');
