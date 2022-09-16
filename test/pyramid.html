@@ -8,8 +8,17 @@
 </head>
 <body>
     <script>
-        let height = 3;
-        
+        let height = 4;
+        function pyramid(){
+            for(let i = 1; i <= height; i++){
+                for(let j = 1; j <= height; j++){
+                    document.write("*");
+                }
+                document.write("*" + "<br>");
+            }
+        }
+        pyramid();
+
     </script>
 </body>
 </html>
