@@ -10,7 +10,7 @@
     <script>
         // **배열의 추가
 
-        // [끝나는 지점] - push
+        // [끝나는 지점 추가] - push
         let li = ['a', 'b', 'c', 'd', 'e'];
 
         li.push('f'); // 꼬리에 집어넣음
@@ -34,7 +34,7 @@
         */
 
 
-        // [시작지점] - unshift
+        // [시작지점 추가] - unshift
         var ol = ['a', 'b', 'c', 'd', 'e'];
         ol.unshift('z'); // 시작지점에 집어넣음
         alert(ol);
@@ -53,6 +53,21 @@
 
 
         // **배열의 제거
+
+        // [시작지점 제거] - shift
+        let bb = ['a','b','c','d'];
+        bb.shift();
+        alert(bb); // 결과값 'b','c','d'
+
+        // [끝나는 지점 제거] - pop
+        let cc = ['a','b','c','d'];
+        cc.pop();
+        alert(cc); // 결과값 'a','b','c'
+
+
+        // 정렬
+
+
         </script>
 </body>
 </html>
