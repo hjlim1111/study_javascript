@@ -38,12 +38,29 @@
         따라서 이러한 오류를 없애기 위하여 반복문을 사용함
         */
 
+
         /*
         let a = ['admin', 'gywjd', 'hj123'];
         alert(a.length); // 결과값 3 출력
 
         가지고 있는 배열에 .length를 붙이게 되면 내가 가지고 있는 원소의 개수를 알려줌
         */
+
+        // 반복문 사용
+        function get_mem_test(){
+            return ['sole', 'gywjd', 'hj123', 'hyojeong'];
+        }
+
+        const test = get_mem_test();
+
+        /*
+        for(let i = 0; i < 3; i++){ i < 3 이 부분을 일일이 바꾸지 않고도 length를 통하여 변경할 수 있다
+            document.write("<br>" + test[i].toUpperCase());
+        }
+        */
+        for(let i = 0; i < test.length; i++){ // 가변적으로 바꾸는 값이 아무리 많아져도 탄력적으로 변경이 됨
+            document.write("<br>" + test[i].toUpperCase());
+        }
     </script>    
 </body>
 </html>
