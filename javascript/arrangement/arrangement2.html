@@ -8,7 +8,42 @@
 </head>
 <body>
     <script>
-        
+        function get_members(){
+            return ['admin', 'gywjd', 'hj123'];
+        }
+
+        const members = get_members();
+
+        document.write(members[0]);
+
+        /*
+        [소문자를 대문자로 바꾸는 것 : toUpperCase()] - 내장함수
+        let a = "admin";
+
+        a.toUpperCase(); // 결과값 'ADMIN'
+        */
+        function get_mems(){
+            return ['admin', 'gywjd', 'hj123'];
+        }
+
+        const mems = get_mems();
+
+        document.write("<br>" + mems[0].toUpperCase());
+        document.write("<br>" + mems[1].toUpperCase());
+        document.write("<br>" + mems[2].toUpperCase());
+        /*
+        이렇게 코드를 사용하다 보면 오류가 발생할 수 있음
+        hj123뒤에 새로운 이름을 추가하면 밑에 있는 document에는 mems[3]의 값을 호출하지 않았기에
+        나타나지 않는 오류가 발생하고, 반대로 hj123을 지우게 된다면 아래에 mems[3]을 호출하였기에 오류가 발생
+        따라서 이러한 오류를 없애기 위하여 반복문을 사용함
+        */
+
+        /*
+        let a = ['admin', 'gywjd', 'hj123'];
+        alert(a.length); // 결과값 3 출력
+
+        가지고 있는 배열에 .length를 붙이게 되면 내가 가지고 있는 원소의 개수를 알려줌
+        */
     </script>    
 </body>
 </html>
