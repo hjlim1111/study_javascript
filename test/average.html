@@ -8,22 +8,51 @@
 </head>
 <body>
     <script>
-        let subject = prompt('과목의 점수를 입력하여주세요.')
+        const subject1 = +prompt('과목1의 점수를 입력하여주세요.');
+        const subject2 = +prompt('과목2의 점수를 입력하여주세요.');
+        const subject3 = +prompt('과목3의 점수를 입력하여주세요.');
 
-        function average(){
-            return [('value1' + 'value2' + 'value3')/3]
-        }
-        let values = average();
-        0 <= values[0] < 100;
-        0 <= values[1] < 100;
-        0 <= values[2] < 100;
+        /*
+        [string -> number로 변환하는 방법]
+        +prompt로 +을 붙이거나
+        Number(subject1); 를 주면 됨
+        ※ number(subject1, subject2, subject3); 로 쓸 수 없음 / 하나하나 다 주기
+        */
+        /*
+        [number -> string로 변환하는 방법]
+        "" + 10 // 빈 문자열을 주고, 숫자를 주면 문자로 인식함 (앞에 문자열이 있어도 동일)
+        String(~~); 을 주면 됨
+        */
 
-        if(values >= 60){
-            value1 > 40 && value2 > 40 && value3 > 40
-            alert('합격');
-        } else {
+
+        const total = subject1 + subject2 + subject3;
+        const average = total/3;
+
+        if(average >= 60){
+            if(subject1 >= 40 && subject2 >= 40 && subject3 >= 40){
+                alert('합격');
+            }else{
+                alert("불합격");
+            }
+        } else{
             alert('불합격');
         }
+        
+        // 효정님의 결과물
+        // function average(){
+        //     return [('value1' + 'value2' + 'value3')/3]
+        // }
+        // let values = average();
+        // 0 <= values[0] < 100;
+        // 0 <= values[1] < 100;
+        // 0 <= values[2] < 100;
+
+        // if(values >= 60){
+        //     value1 > 40 && value2 > 40 && value3 > 40
+        //     alert('합격');
+        // } else {
+        //     alert('불합격');
+        // }
         /* function average(value1, value2, value3){
             return value1 + value2 + value3;
         } */

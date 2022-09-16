@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평균</title>
+</head>
+<body>
+    <script>
+        const subjectCount = 5;
+        const subjectScores = [];
+
+        for (let i = 0; i < subjectCount; i++) {
+            const score = +prompt("과목" + (i + 1) + "의 점수를 입력하세요.");
+            subjectScores.push(score);
+        }
+
+        //const total = subjectScores[0] + subjectScores[1] + subjectScores[2] + subjectScores[3] + subjectScores[4]
+
+        let total = 0;
+        for (let i = 0; i < subjectScores.length; i++) {
+            total += subjectScores[i];
+            // total = total + subjectScores[i];
+        }
+
+        const average = total / subjectScores.length;
+        console.log(average);
+
+        if(average >= 60){
+            for(let i = 0; i < subjectScores.length; i++){
+                if(subjectScores[i] < 40){
+                    alert("불합격");
+                    break;
+                }
+
+                if (i === subjectScores.length - 1) {
+                    alert("합격");
+                }
+            }
+        } else {
+            alert("불합격")
+        }
+
+    </script>
+</body>
+</html>
