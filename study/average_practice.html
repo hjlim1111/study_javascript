@@ -11,6 +11,16 @@
         const korean = prompt('국어 점수를 입력하세요.');
         const math = prompt('수학 점수를 입력하세요.');
         const english = prompt('영어 점수를 입력하세요.');
+
+        const average = (korean + math + english)/3
+
+        if(average >= 60) {
+            if(korean >= 40 && math >= 40 && english >= 40){
+                alert("합격");
+            }
+        } else {
+            alert("불합격");
+        }
     </script>
 </body>
 </html>
