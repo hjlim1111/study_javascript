@@ -29,14 +29,14 @@
     */
 
     // 0~99점 이라는 조건을 추가하였을 때
-
+    /*
         const korean = +prompt('국어 점수를 입력하세요.');
         const math = +prompt('수학 점수를 입력하세요.');
         const english = +prompt('영어 점수를 입력하세요.');
 
         const average = (korean + math + english)/3;
 
-        if(0 <= korean < 100 && 0 <= math < 100 && 0 <= english < 100){
+        if((0 <= korean && korean < 100) && (0 <= math && math < 100) && (0 <= english && english < 100)){
             if(average >= 60) {
                 if(korean >= 40 && math >= 40 && english >= 40){
                         alert("합격");
@@ -49,11 +49,14 @@
         } else {
             alert("점수값을 0이상 100미만으로 입력하세요");
         }
-        
+    */ 
 
     /*
-        개수가 늘어나는 경우의 수를 생각하였을 때
-    */
+        개수가 늘어나는 경우의 수를 생각하였을 때 => 배열을 사용
+    */    
+        const values = [value1, value2, value3]
+             
+    
 
     </script>
 </body>
