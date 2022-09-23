@@ -16,7 +16,7 @@
             numValue.push(value);
         }
 
-        const total = 0;
+        let total = 0;
         for(let i = 0; i < numValue.length; i++){
             total += numValue[i];
         }
@@ -24,12 +24,12 @@
 
         if(average >= 60){
             for(let i = 0; i < numValue.length; i++){
-                if(numValue < 40){
+                if(numValue[i] < 40){
                     alert('블합격');
                     break;
                 }
-                if(i === numValue-1){
-                    alert("합격");
+                if(i === numValue.length - 1){
+                    alert('합격');
                 }
             }
         } else {
