@@ -13,7 +13,11 @@
 
         for(i = 0; i < subjectEa; i++){
             const subject = +prompt("과목" + (i+1) + "의 점수를 입력하세요.");
-            subjectValue.push(subject);
+            if(0 <= subject && subject <= 100) {
+                subjectValue.push(subject);
+            } else {
+                i--;
+            }
         }
 
         //배열에 담긴 값을 더하기
@@ -33,10 +37,24 @@
                 }
                 if(i === subjectEa-1){
                     alert("합격");
-                }        
+                }
             }
         } else {
             alert("불합격");
+        }
+
+        for (let i = 0; i < 10; i++) {
+            if (i % 2 === 0) {
+                continue;
+            }
+
+            console.log(i);
+        }
+
+        for (let i = 0; i < 10; i++){
+            if(i % 2 === 1){
+                console.log(i);
+            }
         }
 
     </script>

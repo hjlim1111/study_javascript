@@ -13,36 +13,27 @@
         그 값과 초기 설정한 값이 같은지 보고 같은 값이 몇개인지 구하기
     -->
     <script>
-        const fixedNumber = 20;
+        // const fixedNumber = 20;
 
-        const count = 6;
-        const number = [];
+        const count = 10;
+        const number = []
 
         for(i = 0; i < count; i++){
             const value = +prompt("숫자" + (i+1) + "를 입력하세요");
             number.push(value);
         }
-        // 10 20 30
-        // 0   1  2
-        let sameValueCount = 0;
+
+        let DrainageCount = 0;
         for(i = 0; i < number.length; i++){
-            // if(i === number.length-1){
-                
-            // }
-            if(fixedNumber === number[i]){
+            if(number[i] % 3 === 0){
                 // alert(sameValueCount=sameValueCount+1);
-                sameValueCount++;
+                DrainageCount++;
             } /* else {
                 alert("같은 값 없음"); 표기 어디?
             } */
         }
         
-        if(sameValueCount > 0){
-            alert(sameValueCount);
-        } else {
-            alert("같은 값 없음");
-        }
-        
+        alert(DrainageCount);
 
     </script>
 </body>
