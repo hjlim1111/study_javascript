@@ -21,6 +21,7 @@
         for(i = 0; i < subjectEa; i++){
             total += subjectValue[i];
         }
+
         let average = total / subjectEa;
 
         if(average >= 60){
@@ -28,9 +29,11 @@
             for(i = 0; i < subjectEa; i++){
                 if(subjectValue[i] < 40){
                     alert("불합격");
-                } else{
-                    
-                }            
+                    break;
+                }
+                if(i === subjectEa-1){
+                    alert("합격");
+                }        
             }
         } else {
             alert("불합격");
