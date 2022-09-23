@@ -34,15 +34,16 @@
             const value = +prompt("숫자" + (i+1) + "를 입력하세요");
             number.push(value);
         }
-
-
-        const remainder = number % 2;
-
-        if(remainder === 0){
-
-        } else {
-
+        
+        for(i = 0; i < number.length; i++){
+            const remainder = number[i] % 2
+            if(remainder === 0){
+                alert('짝수입니다');
+            } else{
+                alert('홀수입니다');
+            }
         }
+
     </script>
 
     <div class="allBox">
