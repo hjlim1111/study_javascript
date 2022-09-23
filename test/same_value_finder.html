@@ -14,6 +14,21 @@
     -->
     <script>
         const fixedNumber = 20;
+
+        const count = 3;
+        const number = []
+
+        for(i = 0; i < count; i++){
+            const value = +prompt("숫자" + (i+1) + "를 입력하세요");
+            number.push(value);
+
+            if(fixedNumber === number[i]){
+                alert("20");
+            }
+
+        }
+        
+        
     </script>
 </body>
 </html>
