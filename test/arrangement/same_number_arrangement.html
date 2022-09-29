@@ -17,12 +17,19 @@
     -->
     <script>
         const valueEa = 10;
-        const value1 = +prompt("숫자를 입력하여 주세요.");
-        const value2 = +prompt("숫자를 입력하여주세요.");
 
         const arrangement1 = [];
         const arrangement2 = [];
 
+        for(let i = 0; i < valueEa; i++){
+            const value1 = +prompt("숫자" + (i+1) + "를 입력하여 주세요.");
+            arrangement1.push(value1);
+        }
+
+        for(let i = 0; i < valueEa; i++){
+            const value2 = +prompt("숫자" + (i+1) + "를 입력하여 주세요.");
+            arrangement2.push(value2);
+        }
 
     </script>
 </body>
