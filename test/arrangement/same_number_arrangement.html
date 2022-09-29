@@ -31,6 +31,19 @@
             arrangement2.push(value2);
         }
 
+        let sameValueCount = 0;
+
+        /* 각각의 배열안에 들어있는 변수의 값을 하나하나 비교하여 나타나는 값 */
+        for(let i = 0; i < valueEa; i++){
+            if(arrangement1[i] === arrangement2[i]){
+                sameValueCount++;
+            }
+        }
+
+        alert(sameValueCount);
+        
+
+
     </script>
 </body>
 </html>
