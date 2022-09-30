@@ -92,16 +92,14 @@
         <form action="">
             <input type="text" name="" id="loginId" placeholder="아이디">
             <input type="password" name="" id="pwd" placeholder="비밀번호" onkeypress="enterkey();">
-            <button type="button" onclick="testLogin();">로그인</button>
+            <button type="button" id="myBtn" onclick="testLogin();">로그인</button>
         </form>
     </div>
-
     <ul>
         <li><a href="#">비밀번호 찾기</a></li>
         <li><a href="#">아이디 찾기</a></li>
         <li><a href="#">회원가입</a></li>
     </ul>
-
     <p>아이디 : admin 비밀번호 : 111111<br>위의 설정값을 입력하여 로그인하여 보세요.</p>
 
     <script>
@@ -109,8 +107,9 @@
         function testLogin(){
             //let id = $('#loginId').val();
             //let pwd = $('#pwd').val();
-            let id = document.getElementById('loginId');
-            let pwd = document.getElementById('pwd');
+            let id = document.getElementById('#loginId');
+            let pwd = document.getElementById('#pwd');
+            let input = document.getElementById("pwd");
             
 
             if(id === "admin" && pwd === "111111"){
@@ -120,11 +119,21 @@
                 alert("아이디, 비밀번호를 확인하여 주세요.");
             }
         };
+
+        input.addEventListener("keyup", function (event) {
+            if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("myBtn").click();
+            testLogin();
+            }
+        });
+        /*         
         function enterkey() {
 	    if (window.event.keyCode === 13) {
             testLogin();
             }
         }
+         */
     </script>
 </body>
 </html>
