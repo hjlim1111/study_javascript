@@ -93,7 +93,6 @@
             <input type="text" name="" id="loginId" placeholder="아이디">
             <input type="password" name="" id="pwd" placeholder="비밀번호">
             <button type="button" id="myBtn">로그인</button>
-            <!--<button type="button" id="myBtn" onclick="testLogin();">로그인</button>-->
         </form>
     </div>
     <ul>
@@ -110,7 +109,7 @@
             //let pwd = $('#pwd').val();
             let id = document.getElementById('loginId');
             let pwd = document.getElementById('pwd');
-            
+            console.log(id);
 
             if(id === "admin" && pwd === "111111"){
                 alert("로그인되었습니다.");
@@ -119,9 +118,9 @@
                 alert("아이디, 비밀번호를 확인하여 주세요.");
             }
         };
-
-        myBtn.addEventListener("click", function (event){
-            testLogin();
+        myBtn.addEventListener("click", function (event) {
+            alert("클릭이벤트~");
+            
         });
         pwd.addEventListener("keyup", function (event) {
             if (event.keyCode === 13) {
@@ -132,7 +131,7 @@
         });
         /*         
         function enterkey() {
-	    if (window.event.keyCode === 13) {
+       if (window.event.keyCode === 13) {
             testLogin();
             }
         }
