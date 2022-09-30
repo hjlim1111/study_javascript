@@ -109,13 +109,14 @@
             //let pwd = $('#pwd').val();
             let id = document.getElementById('loginId');
             let pwd = document.getElementById('pwd');
-            console.log(id.value);
+            console.log(id);
 
             if(id === "admin" && pwd === "111111"){
                 alert("로그인되었습니다.");
                 location.href="http://gywjd8938.dothome.co.kr/shilla/index.html";
             } else {
                 alert("아이디, 비밀번호를 확인하여 주세요.");
+                id.focus();
             }
         };
         myBtn.addEventListener("click", function (event) {
