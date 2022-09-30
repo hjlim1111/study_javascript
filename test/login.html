@@ -91,7 +91,7 @@
     <div class="loginForm">
         <form action="">
             <input type="text" name="" id="loginId" placeholder="아이디">
-            <input type="password" name="" id="pwd" placeholder="비밀번호" onkeypress="enterkey();">
+            <input type="password" name="" id="pwd" placeholder="비밀번호">
             <button type="button" id="myBtn" onclick="testLogin();">로그인</button>
         </form>
     </div>
@@ -107,9 +107,8 @@
         function testLogin(){
             //let id = $('#loginId').val();
             //let pwd = $('#pwd').val();
-            let id = document.getElementById('#loginId');
-            let pwd = document.getElementById('#pwd');
-            let input = document.getElementById("#pwd");
+            let id = document.getElementById('loginId');
+            let pwd = document.getElementById('pwd');
             
 
             if(id === "admin" && pwd === "111111"){
@@ -120,12 +119,12 @@
             }
         };
 
-        input.addEventListener("keyup", function (event) {
+        pwd.addEventListener("keyup", function (event) {
             if (event.keyCode === 13) {
-            event.preventDefault();
-            document.getElementById("myBtn").click();
-            testLogin();
+                event.preventDefault();// 키 입력값이 입력칸을 채우는 것을
+                document.getElementById("myBtn").click();
             }
+            
         });
         /*         
         function enterkey() {
