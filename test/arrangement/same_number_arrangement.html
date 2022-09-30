@@ -21,19 +21,22 @@
         const arrangement1 = [];
         const arrangement2 = [];
 
+        // 첫번째 배열
         for(let i = 0; i < valueEa; i++){
             const value1 = +prompt("숫자" + (i+1) + "를 입력하여 주세요.");
             arrangement1.push(value1);
         }
-
+        // 두번째 배열
         for(let i = 0; i < valueEa; i++){
             const value2 = +prompt("숫자" + (i+1) + "를 입력하여 주세요.");
             arrangement2.push(value2);
         }
 
+        //같은 값 카운팅
         let sameValueCount = 0;
 
-        /* 각각의 배열안에 들어있는 변수의 값을 하나하나 비교하여 나타나는 값 */
+        /* 
+        각각의 배열안에 들어있는 변수의 값을 하나하나 비교하여 나타나는 값 
         for(let i = 0; i < valueEa; i++){
             if(arrangement1[i] === arrangement2[i]){
                 sameValueCount++;
@@ -41,7 +44,19 @@
         }
 
         alert(sameValueCount);
+        */
+       
+        /*배열 비교*/
         
+        const sameValu = []; // 같은 값 담는 배열
+        for (let i = 0; i < valueEa; i++){
+            for (let j = 0; j < valueEa; j++){
+                if(arrangement1[i]){
+
+                }
+            }
+            
+        }
 
 
     </script>
