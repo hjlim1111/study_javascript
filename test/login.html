@@ -108,8 +108,8 @@
         function testLogin(){
             //let id = $('#loginId').val();
             //let pwd = $('#pwd').val();
-            let id = document.getElementById('loginId');
-            let pwd = document.getElementById('pwd');
+            let id = document.getElementById('loginId').value;
+            let pwd = document.getElementById('pwd').value;
             
 
             if(id === "admin" && pwd === "111111"){
@@ -120,7 +120,7 @@
             }
         };
 
-        myBtn.addEventListener("click", function (event){
+        myBtn.addEventListener("click", function (event){ // 클릭이벤트
             testLogin();
         });
         pwd.addEventListener("keyup", function (event) {
