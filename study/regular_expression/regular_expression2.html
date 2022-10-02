@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규표현식 패턴들</title>
+</head>
+<body>
+    <div>
+        <p>정규표현식</p>
+        <p>; 문자열을 처리하는 방법중의 하나로 특정한 조건의 문자를 '검색'하거나 '치환'하는 과정을 매우 간편하게 처리할 수 있도록 하는 수단</p>
+        <p>대소문자를 구분함(구분하지 않고 쓰고 싶으면 정규표현식의 내용을 바꾸거나 정규표현식의 설정을 바꾸는 방법이 있음)</p>
+        <p>띄어쓰기도 구분하여 표현함</p>
+
+    </div>
+
+    <div>
+        <p>정규표현식 패턴들</p>
+        <p>
+        First match - 소스 안에서 여러개의 데이터(텍스트)가 패턴에 해당되었을 때 첫번째에 해당하는 패턴을 보여줌
+        All matches - 소스에 있는 모든 일치되는 패턴을 보여줌
+        </p>
+        <p>
+            ^(캐럿) : 캐럿뒤에 나오는 패턴이 소스 상에서 시작위치에 있을 때 사용이 됨
+
+            ex)
+            <source> who is who
+            regular expression : ^who
+            first match : <span>who</span> is who
+            all match : <span>who</span> is who
+        </p>
+        <p>
+            $(달러) : 소스의 끝에 위치하는 대상을 지목할 때
+
+            ex)
+            <source> who is who
+            regular expression : who$
+            first match : who is <span>who</span>
+            all match : who is <span>who</span>
+        </p>
+
+        <p>
+            ex)
+            <source>$12$ \-\ $25$
+            regular expression : ^$
+            first match : $12$ \-\ $25$
+            all match : $12$ \-\ $25$
+
+            \(escape) : 정규표현식에서 의미가 있는 문법적 요소가 아닌 단순한 문자로 바꿔주는 역할
+            regular expression : \$
+            first match : <span>$</span>12$ \-\ $25$
+            all match : <span>$</span>12<span>$</span> \-\ <span>$</span>25<span>$</span>
+
+            regular expression : ^\$
+            first match : <span>$</span>12$ \-\ $25$
+            all match : <span>$</span>12$ \-\ $25$
+
+            regular expression : \$$
+            first match : $12$ \-\ $25<span>$</span>
+            all match : $12$ \-\ $25<span>$</span>
+
+            regular expression : \\
+            first match : $12$ <span>\</span>-\ $25$
+            all match : $12$ <span>\</span>-<span>\</span> $25$
+        </p>
+
+        <p>
+            .() : 모든 캐릭터를 매칭한다.(어떠한 문자,공백,특수문자와 상관없이 다 적용됨)
+
+            ex)
+            <source>Regular expressions are powerful!!!
+            regular expression : .
+            first match : <span>R</span>egular expressions are powerful!!!
+            all match : <span>expressions are powerful!!!</span> 
+
+            regular expression : ......
+            first match : <span>Regula</span>r expressions are powerful!!!
+            all match : <span>Rexpressions are powerf</span>ul!!!
+
+            <source>O.K.
+            regular expression : .
+            first match : <span>O</span>.K.
+            all match : <span>O.K.</span>
+
+            regular expression : \.
+            first match : O<span>.</span>K.
+            all match : O<span>.</span>K<span>.</span>
+
+            regular expression : \..\.
+            first match : O<span>.K.</span>
+            all match : O<span>.K.</span>
+        </p>
+    </div>
+    
+
+
+    <script>
+
+    </script>
+</body>
+</html>
