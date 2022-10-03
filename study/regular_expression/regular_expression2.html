@@ -10,29 +10,46 @@
     <div>
         <p>수량자</p>
         <p>; (Quantifiers)</p>
-        <p>* + ?</p>
+        <p>* + ?</p>원하는 수량을 정확하게 지정하지 못함
+        <p>{안에 값이 옴(숫자)}</p>원하는 수량을 정확하게 지정가능
 
 
     </div>
 
     <div>
+        원하는 수량을 정확하게 지정하지 못함
         <p>
             <source>aabc abc bc
 
             *(별표) : 별표 앞에 등장하는 패턴이 몇번 등장하는 가에서 0~여러개 // 있을 수도 있고 없을 수도 있음
+            * = {0,}
             regular expression : a*b
             first match : <span>aab</span>c abc bc
             all match : <span>aab</span>c <span>ab</span>c <span>b</span>c
 
             +(더하기) : 1~여러개 //하나도 없을 수 없음. 1이상이여야 함
+            + = {1,}
             regular expression : a+b
             first match : <span>aab</span>c abc bc
             all match : <span>aab</span>c <span>ab</span>c bc
 
-            ?(물음표) : 없거나~1개 
+            ?(물음표) : 없거나~1개
+            ? = {0,1}
             regular expression : a?b
             first match : a<span>ab</span>c abc bc
             all match : a<span>ab</span>c <span>ab</span>c <span>b</span>c
+
+            
+            수량자 + ?는 ? 의미가 달라짐
+            ex)
+            *? = 0
+            *는 0~여러개, ?는 없거나~1개 이 중에서 *에서 가장 적은 수량자에 해당하는 0을 가지게 됨
+
+            +? = 1
+            +는 1~여러개, ?는 없거나~1개 이 중에 +에서 가장 적은 수량자에 해당하는 1을 가지게 됨
+
+            ?? = 0
+            ?는 없거나~1개, ?는 없거나~1개 이 중에서 ?에서 가장 적은 수량자에 해당하는 0을 가지게 됨
         </p>
 
         <p>
@@ -80,6 +97,28 @@
             regular expression : -@?@?@?-
             first match : <span>--</span>XX-@-XX-@@-XX-@@@-XX-@@@@-XX-@@-@@- 
             all match : <span>--</span>XX<span>-@-</span>XX<span>-@@-</span>XX<span>-@@@-</span>XX-@@@@-XX<span>-@@-</span>@@- 
+        </p>
+    </div>
+
+    <div>
+        원하는 수량을 정확하게 지정가능
+        <p>
+            {}(증괄호) : 안에 숫자가 와서 정확하게 수량을 정할 수 있음
+
+            ex)
+            <source>One ring to bring them all and in the darkness bind them
+            
+            regular expression : .{5} //.은 모든텍스트 {5}는 5글자(수량을 의미)
+            first match : <span>One r</span>ing to bring them all and in the darkness bind them
+            all match : <span>One ring to bring them all and in the darkness bind the</span>m
+
+            regular expression : [els]{1,3} // [els]는 e나l이나s안에 있는 한 글자 그것이 1개 이상 3이하로 등장했을 때 매칭됨
+            first match : On<span>e</span> ring to bring them all and in the darkness bind them
+            all match : On<span>e</span> ring to bring th<span>e</span>m a<span>ll</span> and in th<span>e</span> darkn<span>ess</span> bind th<span>e</span>m
+
+            regular expression : [a-z]{3,} //{3,} 3이상이라는 뜻
+            first match : One <span>ring</span> to bring them all and in the darkness bind them
+            all match : One <span>ring</span> to <span>bring</span> <span>them</span> <span>all</span> <span>and</span> in <span>the</span> <span>darkness</span> <span>bind</span> <span>them</span>
         </p>
     </div>
 </body>
