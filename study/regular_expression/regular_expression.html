@@ -31,12 +31,22 @@
             all match : <span>who</span> is who
 
             [^](대괄호 안 캐럿) : 대 괄호 안에서 캐럿을 사용하면 not(부정)의 의미를 가짐
-            
+
             ex)
-            <source> who is who
-            regular expression : ^who
-            first match : <span>who</span> is who
-            all match : <span>who</span> is who
+            <source> ABCDEFGHIJKLMNOPQRSTUVWXYZ 
+                     abcdefghijklmnopqrstuvwxyz 0123456789
+
+            regular expression : [^CDghi45]
+            first match : <span>A</span>BCDEFGHIJKLMNOPQRSTUVWXYZ 
+                          abcdefghijklmnopqrstuvwxyz 0123456789
+            all match : <span>AB</span>CD<span>EFGHIJKLMNOPQRSTUVWXYZ
+                        abcdef</span>ghi<span>jklmnopqrstuvwxyz 0123</span>45<span>6789</sanp>
+
+            regular expression : [^W-Z]
+            first match : <span>A</span>BCDEFGHIJKLMNOPQRSTUVWXYZ 
+                          abcdefghijklmnopqrstuvwxyz 0123456789
+            all match :  <span>ABCDEFGHIJKLMNOPQRSTUV</span>WXYZ 
+                         <span>abcdefghijklmnopqrstuvwxyz 0123456789</span>
         </p>
         <p>
             $(달러) : 소스의 끝에 위치하는 대상을 지목할 때
