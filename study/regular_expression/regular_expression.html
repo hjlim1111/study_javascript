@@ -165,6 +165,25 @@
             all match :   AB<span>CDEFGHIJK</span>LMNOPQRSTUVWXYZ
                           <span>abcd</span>efghijklmnopqrstuvwxyz 01<span>23456</span>789
         </p>
+
+        <p>
+            ()(서브패턴) : (a|b|c) a나 b나 c라는 문자를 선택하는 패턴
+
+            ex)
+            <source>Monday Tuesday Friday
+            
+            regular expression : (on|ues|rida)
+            first match : M<span>on</span>day Tuesday Friday
+            all match : M<span>on</span>day T<span>ues</span>day F<span>rida</span>y
+
+            regular expression : (Mon|Tues|Fri)day
+            first match : <span>Monday</span> Tuesday Friday
+            all match : <span>Monday</span> <span>Tuesday</span> <span>Friday</span>
+
+            regular expression : ..(id|esd|nd)ay
+            first match : <span>Monday</span> Tuesday Friday
+            all match : <span>Monday</span> <span>Tuesday</span> <span>Friday</span>
+        </p>
     </div>
     
 
