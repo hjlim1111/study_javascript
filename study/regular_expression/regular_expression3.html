@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규표현식 수량자</title>
+</head>
+<body>
+    <div>
+        <p>
+            <source>A1 B2 c3 d_4 e:5 ffGG77--__--
+            
+            W(word) : 단어 / 숫자, 알파벳, __ 등 다 포함
+
+            regular expression : \w
+            first match : <span>A</span>1 B2 c3 d_4 e:5 ffGG77--__--
+            all match : <span>A1</span> <span>B2</span> <span>c3</span> <span>d_4</span> <span>e</span>:<span>5</span> <span>ffGG77</span>--<span>__</span>--
+
+            regular expression : \w* //0~여러개까지 있을 수도 있고 없을 수도 있음
+            first match : <span>A1</span> B2 c3 d_4 e:5 ffGG77--__--
+            all match : <span>A1</span> <span>B2</span> <span>c3</span> <span>d_4</span> <span>e</span>:<span>5</span> <span>ffGG77</span>--<span>__</span>--
+
+            regular expression : [a-z]\w*
+            first match : A1 B2 <span>c3</span> d_4 e:5 ffGG77--__--
+            all match : A1 B2 <span>c3</span> <span>d_4</span> <span>e</span>:5 <span>ffGG77</span>--__--
+
+            regular expression : \w{5}
+            first match : A1 B2 c3 d_4 e:5 <span>ffGG7</span>7--__--
+            all match : A1 B2 c3 d_4 e:5 <span>ffGG7</span>7--__--
+
+            regular expression : [A-z0-9_] // = \w
+            first match : <span>A</span>1 B2 c3 d_4 e:5 ffGG77--__--
+            all match : <span>A1</span> <span>B2</span> <span>c3</span> <span>d_4</span> <span>e</span>:<span>5</span> <span>ffGG77</span>--<span>__</span>--
+        </p>
+    </div>
+</body>
+</html>
