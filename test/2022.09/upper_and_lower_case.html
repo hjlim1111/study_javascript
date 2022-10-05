@@ -19,8 +19,6 @@
     <script>
         const count = 10;
         const number = [];
-        let check_eng = [a-zA-Z];
-        // const numberEng = /[a-zA-Z]/;
 
         // const upper = [];
         // const lower = [];
@@ -28,7 +26,7 @@
         // 한글과 숫자, 알파벳 두자리도 되지 않음을 검사
         for(let i = 0; i < count; i++){
             const value = prompt((i+1)+"번 알파벳 한 글자를 입력하세요.");
-            if(value[i].length === 1 && value[i] === check_eng) {
+            if(value[i].length === 1 && value[i] === /[a-zA-Z]/g) {
                 number.push(value);
             } else {
                 i--;
