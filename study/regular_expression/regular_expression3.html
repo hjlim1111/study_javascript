@@ -49,6 +49,13 @@
         </p>
 
         <p>
+            
+            /s : 띄어쓰기
+            /S : 띄어쓰기를 제외한 모든 것
+
+        </p>
+
+        <p>
             <source>Page 123; published: 1234 id=12#24@112
             
             /d(디지트) : 0~9까지 숫자
@@ -56,7 +63,23 @@
             regular expression : \d
             first match : Page <span>1</span>23; published: 1234 id=12#24@112
             all match : Page <span>123</span>; published: <span>1234</span> id=<span>12</span>#<span>24</span>@<span>112</span>
+            
+
+            /D(디지트) : 숫자를 제외한 것들
+
+            regular expression : \D
+            first match : <span>P</span>age 123; published: 1234 id=12#24@112
+            all match : <span>Page </span>123<span>; published: </span>1234<span> id=</span>12<span>#</span>24<span>@</span>112
+
+
+            [0-9] : 0~9까지 숫자 // =/d
+            
+            regular expression : \d
+            first match : Page <span>1</span>23; published: 1234 id=12#24@112
+            all match : Page <span>123</span>; published: <span>1234</span> id=<span>12</span>#<span>24</span>@<span>112</span>
         </p>
+
+        
     </div>
 </body>
-</html>
+</html>ㅛ
