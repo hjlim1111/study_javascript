@@ -10,10 +10,20 @@
     <!--
         [문제]
         사용자에게 두개의 자연수를 입력받은뒤에 그 두 자연수의 최대공약수를 구하는 로직짜기
-
     -->
     <script>
-
+        const count = 2;
+        const number = [];
+        
+        for(let i =0; i < count; i++){
+            const value = +prompt("자연수를 입력하세요");
+            if(1 <= value){
+                number.push(value);
+            } else {
+                i--;
+            }
+            
+        }
     </script>
 </body>
 </html>
