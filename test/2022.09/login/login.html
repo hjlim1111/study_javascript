@@ -105,8 +105,8 @@
     <script>
         /*제이쿼리를 사용하지 않고 로직짜기*/
         function testLogin(){
-            let id = document.getElementById('loginId').value;
-            let pwd = document.getElementById('pwd').value;
+            const id = document.getElementById('loginId').value;
+            const pwd = document.getElementById('pwd').value;
             
 
             if(id === "admin" && pwd === "111111"){
@@ -124,9 +124,8 @@
         pwd.addEventListener("keyup", function (event) {
             if (event.keyCode === 13) {
                 event.preventDefault();// 키 입력값이 입력칸을 채우는 것을 방지
-                document.getElementById("myBtn").click();
+                testLogin(); //document.getElementById("myBtn").click(); 와 동일
             }
-            
         });
     </script>
 </body>
