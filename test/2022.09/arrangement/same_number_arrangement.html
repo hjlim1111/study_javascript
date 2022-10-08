@@ -16,7 +16,7 @@
         두 배열에서 비교해서 똑같은 숫자가 몇개인지 찾기
     -->
     <script>
-        const valueEa = 10;
+        const valueEa = 2;
 
         const arrangement1 = [];
         const arrangement2 = [];
@@ -40,12 +40,12 @@
                 if(arrangement1[i] === arrangement2[j]){
                     let same = arrangement1[i];
                     sameValu.push(same);
-                    break;
+                    // break; 유무에 따라 뭐가 차이가 있나?
                 }
             }
-            
         }
         alert(sameValu.length);
+        // 두 배열에서 같은값이 몇개인지 찾는데 같은 수일 경우 중복되지 않도록
 
         
         /* 
