@@ -35,12 +35,15 @@
         /*배열 비교*/
         
         const sameValu = []; // 같은 값 담는 배열
+        const overlap = []; // 중복되지 않은 값을 담는 배열
         for (let i = 0; i < valueEa; i++){
             for (let j = 0; j < valueEa; j++){
                 if(arrangement1[i] === arrangement2[j]){
-                    let same = arrangement1[i];
-                    sameValu.push(same);
-                    // break; 유무에 따라 뭐가 차이가 있나?
+                    sameValu.push(arrangement1[i]);
+                    break; // break를 걸지 않으면 이미 같다고 검사한 값에 대한 비교를 계속하기 때문에 원하는 값이 도출되지 않음
+                }
+                if(sameValu[i] !== sameValu[i+1]){ // 중복된 값을 제거
+                    overlap 
                 }
             }
         }
@@ -55,19 +58,32 @@
 
 
 
-        
+
+        /*
+        같은 숫자의 값도 동일하게 있으면 중복되어 개수를 체크하며 동일 숫자를 찾는 로직
+        const sameValu = [];
+        for (let i = 0; i < valueEa; i++){
+            for (let j = 0; j < valueEa; j++){
+                if(arrangement1[i] === arrangement2[j]){
+                    const same = arrangement1[i];
+                    sameValu.push(same);
+                    break;
+                }
+            }
+        }
+        alert(sameValu.length);
+        */
+
         /* 
-        각각의 배열안에 들어있는 변수의 값을 하나하나 비교하여 나타나는 값 
+        각각의 배열안에 들어있는 변수의 값을 하나하나 비교하여 나타나는 값
+
         for(let i = 0; i < valueEa; i++){
             if(arrangement1[i] === arrangement2[i]){
                 sameValueCount++;
             }
         }
-
         alert(sameValueCount);
         */
-
-
     </script>
 </body>
 </html>
