@@ -18,6 +18,9 @@
         // 약수의 값이 들어갈 배열
         const measure1 = [];
         const measure2 = [];
+
+        // 동일한 약수 값이 들어갈 배열
+        const sameMeasure = [];
         
         // 자연수 값을 입력받는 로직
         for(let i =0; i < count; i++){
@@ -40,7 +43,15 @@
         }
 
         // 두 약수의 공통된 값 찾기
-
+        for(let i = 0; i <= 100; i++){ // 100으로 설정하니 undefined값이 나와서 length가 길어짐. 고칠방안 생각하기
+            for(let j = 0; j <= 100; j++){
+                if(measure1[i] === measure2[j]){
+                    sameMeasure.push(measure1[i]);
+                    break;
+                }
+            }
+        }
+        
         // 가장 큰 값 찾기
 
         //최대공약수
