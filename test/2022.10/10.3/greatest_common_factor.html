@@ -14,11 +14,15 @@
     <script>
         const count = 2;
         const number = [];
+
+        // 약수의 값이 들어갈 배열
+        const measure1 = [];
+        const measure2 = [];
         
         // 자연수 값을 입력받는 로직
         for(let i =0; i < count; i++){
             const value = +prompt("자연수" + (i+1) + "를 입력하세요");
-            if(/[0-9]/.test(value)){ //1 <= value 와 동일한 로직
+            if(/[0-9]/.test(value) && value <= 100){ //1 <= value 와 동일한 로직
                 number.push(value);
             } else {
                 i--;
@@ -26,6 +30,14 @@
         }
 
         // 두 숫자의 약수를 구하고 그 중 중복되는 약수의 값이 가장 큰 값이 최대공약수 값 => 이 로직을 짜기
+        for(let i = 0; i <= 100; i++){
+            if(number[i] % (i+1) === 0){
+                measure1.push(i+1);
+            }
+            if(number[i+1] % (i+1) === 0){
+                measure2.push(i+1);
+            }
+        }
     </script>
 </body>
 </html>
