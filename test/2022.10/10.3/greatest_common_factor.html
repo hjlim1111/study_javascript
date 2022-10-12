@@ -32,7 +32,7 @@
             }
         }
 
-        // 두 숫자의 약수를 구하고 그 중 중복되는 약수의 값이 가장 큰 값이 최대공약수 값 => 이 로직을 짜기
+        // 두 숫자의 약수를 구하고 그 중 중복되는 약수의 값이 가장 큰 값이 최대공약수 값
         for(let i = 0; i <= 100; i++){
             if(number[0] % (i+1) === 0){ // i로 주니 계속 같이 값이 더하여져 제대로된 값이 나오지 않아 0으로 설정.
                 measure1.push(i+1);
@@ -51,10 +51,11 @@
                 }
             }
         }
-        
-        // 가장 큰 값 찾기
 
         //최대공약수
+        const greatestCommon = sameMeasure[sameMeasure.length];
+
+        alert(greatestCommon);
     </script>
 </body>
 </html>
