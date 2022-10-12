@@ -123,7 +123,7 @@
         });
         pwd.addEventListener("keyup", function (event) {
             if (event.keyCode === 13) {
-                event.preventDefault();// 키 입력값이 입력칸을 채우는 것을 방지
+                event.preventDefault();// 키 입력값이 입력칸을 채우는 것을 방지 => 지금은 그렇게 필요한 로직은 아님
                 testLogin(); //document.getElementById("myBtn").click(); 와 동일
             }
         });
