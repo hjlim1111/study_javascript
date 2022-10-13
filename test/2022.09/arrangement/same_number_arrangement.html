@@ -45,16 +45,16 @@
             }
         }
 
-        for(let i = 0; i < valueEa; i++){
-            for(let j = 0; j < valueEa; j++){
+        for(let i = 0; i < sameValu.length; i++){
+            for(let j = 0; j < sameValu.length; j++){
                 if(sameValu[i] === sameValu[j+1]){
-
+                    overlap.push(sameValu[i]);
+                    break;
                 }
             }
-            
         }
         
-        alert(sameValu.length - overlap.length);
+        //alert(sameValu.length - overlap.length);
         // 두 배열에서 같은값이 몇개인지 찾는데, 같은 수일 경우 중복되지 않도록 하여 개수
 
 
