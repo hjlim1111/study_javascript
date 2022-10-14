@@ -43,7 +43,7 @@
         }
 
         // 두 약수의 공통된 값 찾기
-        for(let i = 0; i <= 100; i++){ // 100으로 설정하니 undefined값이 나와서 length가 길어짐. 고칠방안 생각하기
+        for(let i = 0; i < measure1.length && i < measure2.length; i++){ // 100으로 설정하니 undefined값이 나와서 length가 길어짐. 고칠방안 생각하기
             for(let j = 0; j <= 100; j++){
                 if(measure1[i] === measure2[j]){
                     sameMeasure.push(measure1[i]);
@@ -53,7 +53,7 @@
         }
 
         //최대공약수
-        const greatestCommon = sameMeasure[sameMeasure.length];
+        const greatestCommon = sameMeasure[sameMeasure.length - 1];
 
         alert(greatestCommon);
     </script>
