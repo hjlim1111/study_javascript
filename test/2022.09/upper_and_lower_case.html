@@ -36,6 +36,14 @@
 
         // 알파벳 대소문자 변환
         for(let i = 0; i < count; i++){
+            /*          
+            const converted = /[a-z]/.test(alphabets[i]) ? 
+                alphabets[i].toUpperCase() : 
+                alphabets[i].toLowerCase();
+            upperLower.push(converted);
+            아래 로직과 실행되는 것은 동일하지만 다른코드
+            */
+
             if(/[a-z]/.test(alphabets[i])){
                 upperLower.push(alphabets[i].toUpperCase());
             } else {
