@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평균값 구하기 - 배열사용</title>
+</head>
+<body>
+    <script>
+        const subjectEa = 3; 
+        const subjectValue = []; // 배열.length 가 아닌 subjectEa로 하면 되지 않는가?
+
+        for(i = 0; i < subjectEa; i++){
+            const subject = +prompt("과목" + (i+1) + "의 점수를 입력하세요.");
+            if(0 <= subject && subject <= 100) { // 0점 이상 100이하의 점수만 입력
+                subjectValue.push(subject);
+            } else {
+                i--;
+            }
+        }
+
+        //배열에 담긴 값을 더하기
+        let total = 0;
+        for(i = 0; i < subjectEa; i++){
+            total += subjectValue[i];
+        }
+
+        let average = total / subjectEa;
+
+        if(average >= 60){
+            // 과목당 40점 이상으로 되게
+            for(i = 0; i < subjectEa; i++){
+                if(subjectValue[i] < 40){
+                    alert("불합격");
+                    break;
+                }
+                if(i === subjectEa-1){
+                    alert("합격");
+                }
+            }
+        } else {
+            alert("불합격");
+        }
+
+        for (let i = 0; i < 10; i++) {
+            if (i % 2 === 0) {
+                continue;
+            }
+
+            console.log(i);
+        }
+
+        for (let i = 0; i < 10; i++){
+            if(i % 2 === 1){
+                console.log(i);
+            }
+        }
+
+    </script>
+</body>
+</html>
