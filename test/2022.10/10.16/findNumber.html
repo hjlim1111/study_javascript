@@ -16,13 +16,15 @@
     -->
     <script>
         const count = 3;
-        const inputNums = [];
+        const ascend = [];
 
         for(let i = 0; i < count; i++){
             const inputNum = +prompt((i+1)+"숫자를 입력하여주세요.");
             inputNums.push(inputNum);
         }
         
+        ascend.sort();
+        alert(ascend);
     </script>
 </body>
 </html>
