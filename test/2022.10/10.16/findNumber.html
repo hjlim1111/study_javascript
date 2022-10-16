@@ -20,11 +20,16 @@
 
         for(let i = 0; i < count; i++){
             const inputNum = +prompt((i+1)+"숫자를 입력하여주세요.");
-            inputNums.push(inputNum);
+            if(/[0-9]/.test(inputNum)){
+                ascend.push(inputNum);
+            } else{
+                i--;
+            }
+            
         }
-        
         ascend.sort();
-        alert(ascend);
+
+        alert(ascend[ascend.length - 1]);
     </script>
 </body>
 </html>
