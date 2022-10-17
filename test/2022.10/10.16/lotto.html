@@ -17,13 +17,29 @@
     -->
     <script>
         const numCount = 6;
-        const randomNums = [];// 랜덤의 값을 담는 배열
+        const lottoNum = []; // 로또번호 
+        let randomNum = []; // 랜덤으로 받을 숫자들
 
         for(let i = 0; i < numCount; i++){
-            let randomNum = Math.round(100 * Math.random());
-            if(randomNum < 45){
-                randomNums.push(randomNum);
+            randomNum[i] = Math.round(100 * Math.random());
+            if(randomNum[i] < 45 && /[1-9]/.test(randomNum[i])){
+                if(overlapCheck(lottoNum, randomNum[i])){
+                    lottoNum.push(randomNum[i]);
+                } else{
+                    i--;
+                }
+            } else{
+                i--;
             }
+        }
+
+        function overlapCheck(num, targetNum){
+            for(let i = 0; i < num.length; i++){
+                if(num[i] === targetNum){
+                    return false;
+                }
+            }
+            return true;
         }
         
     </script>
