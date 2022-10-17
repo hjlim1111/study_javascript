@@ -20,8 +20,8 @@
         const randomNums = [];// 랜덤의 값을 담는 배열
 
         for(let i = 0; i < numCount; i++){
-            if(randomNums[i] < 45){
-                const randomNum = Math.round(100 * Math.random());
+            let randomNum = Math.round(100 * Math.random());
+            if(randomNum < 45){
                 randomNums.push(randomNum);
             }
         }
