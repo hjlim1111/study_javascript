@@ -1,67 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>최대공약수</title>
-</head>
-<body>
+  </head>
+  <body>
     <!--
         [문제]
         사용자에게 두개의 자연수를 입력받은뒤에 그 두 자연수의 최대공약수를 구하는 로직짜기
     -->
     <script>
-        const count = 2;
-        const number = [];
+      const count = 2;
+      const number = [];
 
-        // 약수의 값이 들어갈 배열
-        const measure1 = [];
-        const measure2 = [];
+      // 약수의 값이 들어갈 배열
+      const measure1 = [];
+      const measure2 = [];
 
-        // 동일한 약수 값이 들어갈 배열
-        const sameMeasure = [];
-        
-        // 자연수 값을 입력받는 로직
-        for(let i =0; i < count; i++){
-            const value = +prompt("자연수" + (i+1) + "를 입력하세요");
-            if(/[0-9]/.test(value)){ //1 <= value 와 동일한 로직
-                number.push(value);
-            } else {
-                i--;
-            }
+      // 동일한 약수 값이 들어갈 배열
+      const sameMeasure = [];
+
+      // 자연수 값을 입력받는 로직
+      for (let i = 0; i < count; i++) {
+        const value = +prompt("자연수" + (i + 1) + "를 입력하세요");
+        if (/[0-9]/.test(value)) {
+          //1 <= value 와 동일한 로직
+          number.push(value);
+        } else {
+          i--;
         }
+      }
 
-        // 두 숫자의 약수를 구하고 그 중 중복되는 약수의 값이 가장 큰 값이 최대공약수 값
-        let largeValue = 0;
-        if(number[0] < number[1]){
-            largeValue = number[1];
-        } else{
-            largeValue = number[0];
+      // 두 숫자의 약수를 구하고 그 중 중복되는 약수의 값이 가장 큰 값이 최대공약수 값
+      let largeValue = 0;
+      if (number[0] < number[1]) {
+        largeValue = number[1];
+      } else {
+        largeValue = number[0];
+      }
+      for (let i = 0; i < largeValue; i++) {
+        if (number[0] % (i + 1) === 0) {
+          // i로 주니 계속 같이 값이 더하여져 제대로된 값이 나오지 않아 0으로 설정.
+          measure1.push(i + 1);
         }
-        for(let i = 0; i < largeValue; i++){
-            if(number[0] % (i+1) === 0){ // i로 주니 계속 같이 값이 더하여져 제대로된 값이 나오지 않아 0으로 설정.
-                measure1.push(i+1);
-            }
-            if(number[1] % (i+1) === 0){
-                measure2.push(i+1);
-            }
+        if (number[1] % (i + 1) === 0) {
+          measure2.push(i + 1);
         }
+      }
 
-        // 두 약수의 공통된 값 찾기
-        for(let i = 0; i < measure1.length; i++){ // 100으로 설정하니 undefined값이 나와서 length가 길어짐. 고칠방안 생각하기
-            for(let j = 0; j < measure2.length; j++){
-                if(measure1[i] === measure2[j]){
-                    sameMeasure.push(measure1[i]);
-                    break;
-                }
-            }
+      // 두 약수의 공통된 값 찾기
+      for (let i = 0; i < measure1.length; i++) {
+        // 100으로 설정하니 undefined값이 나와서 length가 길어짐. 고칠방안 생각하기
+        for (let j = 0; j < measure2.length; j++) {
+          if (measure1[i] === measure2[j]) {
+            sameMeasure.push(measure1[i]);
+            break;
+          }
         }
+      }
 
-        //최대공약수
-        const greatestCommon = sameMeasure[sameMeasure.length - 1];
+      //최대공약수
+      const greatestCommon = sameMeasure[sameMeasure.length - 1];
 
-        alert(greatestCommon);
+      alert(greatestCommon);
     </script>
-</body>
+  </body>
 </html>
