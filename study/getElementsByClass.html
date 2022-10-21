@@ -8,12 +8,19 @@
     </div>
 
     <script>
-      const parentDOM = document.getElementById('parent-id');
+      const parentDOM = document.getElementById("parent-id");
+      // document.querySelector(); => 클래스든 아이디이든 상관없음. class를 찾을 때는 . 아이디를 찾을 때는 #
+      // getElementById 는 아이디만 가능, getElementsByClassName는 클래스만 가능
+      /*
+      굳이 Element.getElementsByClassName을 사용할 때 getElementById을 사용하지 않아도 됨
+      class로 지정해서 Elemnet를 주고 싶으면 getElementsByClassName을 활용하여 const 값을 정해주면 됨.
+      그 후 지정했던 const 명을 Element 값에 주고 난 뒤 getElementsByClassName을 사용
+      */
 
-      const test = parentDOM.getElementsByClassName('test'); // a list of matching elements, *not* the element itself
+      const test = parentDOM.getElementsByClassName("test"); // a list of matching elements, *not* the element itself
       console.log(test); // HTMLCollection[1]
 
-      const testTarget = parentDOM.getElementsByClassName('test')[0]; // the first element, as we wanted
+      const testTarget = parentDOM.getElementsByClassName("test")[0]; // the first element, as we wanted
       console.log(testTarget); // <p class="test">hello world 2</p>
     </script>
   </body>
