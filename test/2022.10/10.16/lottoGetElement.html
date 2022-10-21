@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로또번호추첨</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      .lottoNumStyle {
+        text-align: center;
+        font-size: 40px;
+        margin-top: 160px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+        [문제]
+        로또번호 랜덤숫자 중복되지 않고, 화면에 6자리 출력
+    -->
+    <div class="">
+
+    </div>
+    <script>
+      const numCount = 6;
+      
+      const lottoNum = []; // 로또번호
+      const randomNums = []; // 랜덤으로 받을 숫자들
+
+      for (let i = 0; i < numCount; i++) {
+        randomNums[i] = Math.round(100 * Math.random());
+        const randomNum = randomNums[i];
+        if (randomNum < 45 && /[1-9]/.test(randomNum)) {
+          if (overlapCheck(lottoNum, randomNum)) {
+            lottoNum.push(randomNum);
+          } else {
+            i--;
+          }
+        } else {
+          i--;
+        }
+      }
+
+      function overlapCheck(num, targetNum) {
+        for (let i = 0; i < num.length; i++) {
+          if (num[i] === targetNum) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      document.write(lottoNum);
+    </script>
+  </body>
+</html>
