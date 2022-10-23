@@ -4,17 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>로또번호추첨</title>
+    <title>로또번호추첨_javascript와 html 병행_심화</title>
     <style>
       * {
         padding: 0;
         margin: 0;
       }
-
-      .lottoNumStyle {
+      .lottoValue {
         text-align: center;
         font-size: 40px;
-        margin-top: 160px;
+        margin-top: 350px;
         color: #333;
       }
     </style>
@@ -24,21 +23,21 @@
         [문제]
         로또번호 랜덤숫자 중복되지 않고, 화면에 6자리 출력
     -->
-    <div class="">
-
-    </div>
+    <div class="lottoValue"><!--script에서 구한 배열--></div>
     <script>
-      const numCount = 6;
-      
-      const lottoNum = []; // 로또번호
+      const numCount = 6; // 로또랜덤 숫자
+      const output = document.querySelector(".lottoValue"); // .lottoValue를 output에 담음 / 로또 랜덤 번호로 출력될 값
       const randomNums = []; // 랜덤으로 받을 숫자들
+      const lottoNums = []; // 로또번호
 
       for (let i = 0; i < numCount; i++) {
         randomNums[i] = Math.round(100 * Math.random());
         const randomNum = randomNums[i];
-        if (randomNum < 45 && /[1-9]/.test(randomNum)) {
-          if (overlapCheck(lottoNum, randomNum)) {
-            lottoNum.push(randomNum);
+        if (randomNum <= 45 && /[1-9]/.test(randomNum)) {
+          //45 이하이며, 1-9까지 숫자만 들어갈 수 있음
+          if (overlapCheck(lottoNums, randomNum)) {
+            // 동일한 값이 있는지 없는지 검사하는 로직. 동일한 값이 있으면 lottoNums 배열에 담기면 안됨
+            lottoNums.push(randomNum);
           } else {
             i--;
           }
@@ -56,7 +55,8 @@
         return true;
       }
 
-      document.write(lottoNum);
+      //script에서 구한 lottoNums을 output에 담아 화면 출력
+      output.innerHTML = lottoNums;
     </script>
   </body>
 </html>
