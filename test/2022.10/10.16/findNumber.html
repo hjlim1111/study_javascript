@@ -18,7 +18,7 @@
       const count = 4;
       const inputValue = []; //사용자에게 입력 받은 숫자 값들
       const process = [];
-      const ascend = []; // 오름차순으로 정리한 배열값
+      const asceningArray = []; // 오름차순으로 정리한 배열값
 
       for (let i = 0; i < count; i++) {
         const inputNum = +prompt(i + 1 + "숫자를 입력하여주세요.");
@@ -30,16 +30,16 @@
       }
 
       for (let i = 0; i < inputValue.length; i++) {
-        if (ascendingOrder(inputValue, inputValue)) {
+        if (ascendOrder(inputValue, inputValue)) {
           process.push(first[i]);
         }
-        if (ascendingOrder(process, process)) {
-          ascend.push(process[i]);
+        if (ascendOrder(process, process)) {
+          asceningArray.push(process[i]);
         }
       }
 
       // 숫자가 작은 순서대로 나열하는 로직
-      function ascendingOrder(first, second) {
+      function ascendOrder(first, second) {
         for (let i = 0; i < first.length; i++) {
           for (let j = 1; j < first.length; i++) {
             if (first[i] <= second[j]) {
@@ -52,15 +52,18 @@
         return false;
       }
 
-      alert(ascend[ascend.length - 1]);
+      alert(asceningArray[asceningArray.length - 1]);
+
+      //----------------------------------
+
       /* sort 함수 사용
         [오름차순 - 가장 큰 값]
-        ascend.sort();
-        alert(ascend[ascend.length - 1]);
+        asceningArray.sort();
+        alert(asceningArray[asceningArray.length - 1]);
 
         [오름차순 - 가장 작은 값]
-        ascend.sort();
-        alert(ascend[0]);
+        asceningArray.sort();
+        alert(asceningArray[0]);
         */
 
       /*
