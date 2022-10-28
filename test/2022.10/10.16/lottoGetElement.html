@@ -27,26 +27,20 @@
     <script>
       const numCount = 6; // 로또랜덤 숫자
       const output = document.querySelector(".lottoValue"); // .lottoValue를 output에 담음 / 로또 랜덤 번호로 출력될 값
-      const randomNums = []; // 랜덤으로 받을 숫자들
       const lottoNums = []; // 로또번호
 
       for (let i = 0; i < numCount; i++) {
-        randomNums[i] = Math.round(100 * Math.random());
-        const randomNum = randomNums[i];
-        if (randomNum <= 45 && /[1-9]/.test(randomNum)) {
-          //45 이하이며, 1-9까지 숫자만 들어갈 수 있음
-          if (overlapCheck(lottoNums, randomNum)) {
-            // 동일한 값이 있는지 없는지 검사하는 로직. 동일한 값이 있으면 lottoNums 배열에 담기면 안됨
-            lottoNums.push(randomNum);
-          } else {
-            i--;
-          }
+        const randomNum = Math.ceil(45 * Math.random());
+        if (checkOverlap(lottoNums, randomNum)) {
+          // 동일한 값이 있는지 없는지 검사하는 로직. 동일한 값이 있으면 lottoNums 배열에 담기면 안됨
+          lottoNums.push(randomNum);
         } else {
           i--;
         }
       }
 
-      function overlapCheck(num, targetNum) {
+      // 함수 네이밍을 할 때는 동사원형를 먼저쓰기!! 클래스,변수는 명사(함수빼고)
+      function checkOverlap(num, targetNum) {
         for (let i = 0; i < num.length; i++) {
           if (num[i] === targetNum) {
             return false;
