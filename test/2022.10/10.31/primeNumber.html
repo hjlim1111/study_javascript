@@ -11,9 +11,22 @@
       [문제]
       숫자를 입력받고 1부터 그 숫자까지 중에 소수를 출력하기
       ex) 10을 입력받았을 때 소수는? : 2,3,5,7 요로케 (약수 아니다)
+
     -->
     <script>
       const inputValue = +prompt("숫자를 입력하세요");
+      const number = [];
+
+      // 소수 : 1이상으로 1과 자기자신의 값
+      // value % i = 0 / 2개
+
+      for (let i = 1; i <= inputValue; i++) {
+        for (let j = 1; j <= inputValue; j++) {
+          if (i % j === 0) {
+            number.push(i);
+          }
+        }
+      }
     </script>
   </body>
 </html>
