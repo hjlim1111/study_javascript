@@ -21,12 +21,19 @@
       // value % i = 0 / 2개
 
       for (let i = 1; i <= inputValue; i++) {
-        for (let j = 1; j <= inputValue; j++) {
-          if (i % j === 0) {
-            number.push(i);
-          }
+        const prime = inputValue % i === 0;
+        if (prime.lenght === 2) {
+          number.push(inputValue);
         }
       }
+
+      /*
+      2 3 5 7 11
+      1과 자기자신을 약수로 가짐 = 소수
+
+      (value / n === 1 && value / n === value) && 몫이 2개
+      이 모든 조건이 충족해야 소수가 됨
+      */
     </script>
   </body>
 </html>
