@@ -17,7 +17,6 @@
     <script>
       const count = 4;
       const inputValue = []; //사용자에게 입력 받은 숫자 값들
-      const bigNumber = [];
 
       for (let i = 0; i < count; i++) {
         const inputNum = +prompt(i + 1 + "숫자를 입력하여주세요.");
@@ -28,10 +27,14 @@
         }
       }
 
-      for (let i = i; i < inputValue.length; i++) {
-        if (inputValue[i] < inputValue[i + 1]) {
+      let bigNumber = inputValue[0];
+
+      for (let i = 0; i < inputValue.length; i++) {
+        if (inputValue[i] >= bigNumber) {
+          bigNumber = inputValue[i];
         }
       }
+
       //----------------------------------
 
       /* sort 함수 사용
