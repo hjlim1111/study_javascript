@@ -21,20 +21,6 @@
       const arrangments = [112, 234, 223425, 4545, 45];
       let largeNumber = arrangments[0];
 
-      /*
-      가장 큰 값을 찾는 함수 로직
-      findLargeNum(arrangments, largeNumber);
-      
-      function findLargeNum(arrangment, value) {
-        for (let i = 0; i < arrangment.length; i++) {
-          if (arrangment[i] > value) {
-            value = arrangment[i];
-          }
-        }
-        return value;
-      }
-      */
-
       // 가장 큰 값을 찾는 로직
       for (let i = 0; i < arrangments.length; i++) {
         if (arrangments[i] > largeNumber) {
@@ -55,22 +41,10 @@
         return -1; // 값을 찾지 못한 경우 -1 출력이 일반적
       }
 
-      /*
-      arrangments.splice(index, 1);
-      console.log(arrangments);
-
-      for (let i = 0; i < arrangments.length; i++) {
-        if (arrangments[i] > largeNumber) {
-          largeNumber = arrangments[i];
-        }
-      }
-      이렇게 하려니까 여전히 첫번째 큰 값이 출력됨
-      왜?
-      splice에서 제거 했는데?
-      */
       arrangments.splice(index, 1);
       const arrangement2 = arrangments;
 
+      // 두번째로 큰 값을 찾는 로직
       let largeNum2 = arrangement2[0];
       for (let i = 0; i < arrangement2.length; i++) {
         if (arrangement2[i] > largeNum2) {
