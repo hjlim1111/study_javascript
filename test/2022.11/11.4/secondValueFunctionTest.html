@@ -33,21 +33,22 @@
         return value;
       }
 
-      largeNumber = firstValue;
+      largeNumber = firstValue; // function 이라 정의가 팔요
 
-      const index = findIndex(arrangments, largeNumber);
-      console.log(index);
+      const indexNum = findIndex(arrangments, largeNumber);
+      console.log(indexNum);
 
       // 배열 인덱스 번호를 찾는 함수 로직
       function findIndex(arrangment, value) {
-        // 함수쓸 때 괄호 안에 있는 이름들 다른 함수와 중복으로 적어도 되는지? 같은 값을 정의하는 것임
         for (let i = 0; i < arrangment.length; i++) {
           if (arrangment[i] === value) {
             return i;
           }
         }
-        return -1; // 값을 찾지 못한 경우 -1 출력이 일반적
+        return -1;
       }
+
+      //---------------- 여기까지 돌리기 완료
 
       /*
       arrangments.splice(index, 1);
@@ -77,12 +78,12 @@
       */
 
       // 가장 큰 값을 배열에서 제거하기
-      arrangments.splice(index, 1);
-      const delArrangments = arrangments;
+      // arrangments.splice(index, 1);
+      // const delArrangments = arrangments;
 
-      largeNumber = delArrangments[0];
-      const secondValue = findLargeNum(delArrangments, largeNumber);
-      console.log(secondValue);
+      // largeNumber = delArrangments[0];
+      // const secondValue = findLargeNum(delArrangments, largeNumber);
+      // console.log(secondValue);
     </script>
   </body>
 </html>
