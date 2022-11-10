@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      가장 큰 숫자 찾기 - 순서대로 정렬하여 큰 숫자 구하기(유동적이지 못한 코드)
+    </title>
+  </head>
+  <body>
+    <!--
+        [문제1]
+        사용자에게 숫자를 입력받고, 그중에서 가장 큰 숫자찾기 (배열)
+
+        [문제2]
+        <-> 가장 작은 숫자 찾기
+
+
+        1) 숫자의 높은 순서대로 정렬하지 않고 바로 가장 큰 숫자 구하기
+        2) 숫자를 높은 순서대로 정렬하여 가장 큰 숫자 구하기
+
+
+
+
+        11.09 과제 : 일단 이 코드와 secondValue.html 을 참고하여 코드 리팩토링 더 하기
+    -->
+    <script>
+      const count = 4;
+      const inputValue = []; //사용자에게 입력 받은 숫자 값들
+
+      for (let i = 0; i < count; i++) {
+        const inputNum = +prompt(i + 1 + "숫자를 입력하여주세요.");
+        if (/[0-9]/.test(inputNum)) {
+          inputValue.push(inputNum);
+        } else {
+          i--;
+        }
+      }
+
+      // 2) 의 방식을 사용하여 로직 풀어보기
+
+      let bigNumber = inputValue[0]; // 가장 큰 값을 가정
+      const largeValues = [];
+
+      // 가장 큰 값을 구하고 가장 큰 값을 배열에 담은 첫번째 로직
+      for (let i = 0; i < inputValue.length; i++) {
+        if (inputValue[i] > bigNumber) {
+          bigNumber = inputValue[i];
+        }
+      }
+      largeValues.push(bigNumber);
+
+      // inputValue에서 가장 큰 값을 제하고, 다시 가장 큰 값을 구하여 새로운 largeValues 배열에 담고 그 과정 무한 반복
+
+      // 배열의 index값을 구하는 로직
+      let indexNum = 0;
+      for (let i = 0; i < inputValue.length; i++) {
+        if (inputValue[i] === bigNumber) {
+          indexNum = i;
+        }
+      }
+
+      // 가장 큰 값을 원래 배열에서 제거하는 로직
+      inputValue.splice(indexNum, 1);
+      const second = inputValue;
+
+      // 2번째 큰 값을 배열에서 찾기
+      bigNumber = second[0];
+
+      for (let i = 0; i < second.length; i++) {
+        if (second[i] > bigNumber) {
+          bigNumber = second[i];
+        }
+      }
+      largeValues.push(bigNumber);
+
+      // 배열의 index값을 구하는 로직
+      indexNum = 0;
+      for (let i = 0; i < second.length; i++) {
+        if (second[i] === bigNumber) {
+          indexNum = i;
+        }
+      }
+
+      // 2번째 큰 값을 원래 배열에서 제거하는 로직
+      second.splice(indexNum, 1);
+      const third = second;
+
+      // 3번째 큰 값을 배열에서 찾기
+      bigNumber = third[0];
+
+      for (let i = 0; i < third.length; i++) {
+        if (third[i] > bigNumber) {
+          bigNumber = third[i];
+        }
+      }
+      largeValues.push(bigNumber);
+
+      // 배열의 index값을 구하는 로직
+      indexNum = 0;
+      for (let i = 0; i < third.length; i++) {
+        if (third[i] === bigNumber) {
+          indexNum = i;
+        }
+      }
+
+      // 3번째 큰 값을 원래 배열에서 제거하는 로직
+      third.splice(indexNum, 1);
+      const fourth = third;
+
+      // 3번째 큰 값을 배열에서 찾기
+      bigNumber = fourth[0];
+
+      for (let i = 0; i < fourth.length; i++) {
+        if (fourth[i] > bigNumber) {
+          bigNumber = fourth[i];
+        }
+      }
+      largeValues.push(bigNumber);
+
+      // 배열의 index값을 구하는 로직
+      indexNum = 0;
+      for (let i = 0; i < fourth.length; i++) {
+        if (fourth[i] === bigNumber) {
+          indexNum = i;
+        }
+      }
+
+      // 3번째 큰 값을 원래 배열에서 제거하는 로직
+      fourth.splice(indexNum, 1);
+      const five = third;
+
+      alert(largeValues);
+    </script>
+  </body>
+</html>
