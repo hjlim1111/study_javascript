@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      가장 큰 숫자 찾기 - 순서대로 정렬하여 큰 숫자 구하기 (함수사용)
+      가장 큰 숫자 찾기 - 순서대로 정렬하여 큰 숫자 구하기 (함수사용 - 처음 내가
+      짠 로직)
     </title>
   </head>
   <body>
@@ -19,6 +20,9 @@
 
         1) 숫자의 높은 순서대로 정렬하지 않고 바로 가장 큰 숫자 구하기
         2) 숫자를 높은 순서대로 정렬하여 가장 큰 숫자 구하기
+
+
+        11.09 과제 : secondValue.html 을 참고하여 코드 리팩토링 - 유연하게 짜고, 가장 큰 수를 구하는 것이 아닌 n번째 큰 수 를 구하는 로직으로
     -->
     <script>
       const count = 4;
@@ -36,7 +40,7 @@
       // 2) 의 방식을 사용하여 로직 풀어보기
 
       let bigNumber = inputValue[0]; // 가장 큰 값을 가정
-      const largeValues = [];
+      const largeValues = []; // 큰 순서를 담을 로직
       const firstValue = findLargeNum(inputValue, bigNumber);
       largeValues.push(firstValue);
 
