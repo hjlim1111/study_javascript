@@ -18,7 +18,7 @@
       
     -->
     <script>
-      const arrangments = [112, 234, 223425, 4545, 45];
+      const arrangments = [112, 234, 223425, 4545, 45, 12, 3322, 14021];
       let largeNumber = arrangments[0];
 
       // 가장 큰 값을 찾는 로직
@@ -41,14 +41,14 @@
         return -1; // 값을 찾지 못한 경우 -1 출력이 일반적
       }
 
-      arrangments.splice(index, 1);
-      const arrangement2 = arrangments;
+      const result = arrangments.splice(index, 1);
+      console.log(result, arrangments);
 
       // 두번째로 큰 값을 찾는 로직
-      let largeNum2 = arrangement2[0];
-      for (let i = 0; i < arrangement2.length; i++) {
-        if (arrangement2[i] > largeNum2) {
-          largeNum2 = arrangement2[i];
+      let largeNum2 = arrangments[0];
+      for (let i = 0; i < arrangments.length; i++) {
+        if (arrangments[i] > largeNum2) {
+          largeNum2 = arrangments[i];
         }
       }
 
