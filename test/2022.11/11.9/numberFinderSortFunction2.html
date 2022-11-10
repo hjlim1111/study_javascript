@@ -43,20 +43,34 @@
       const firstValue = findLargeNum(inputValue);
       largeValues.push(firstValue);
 
-      const indexNum = findIndex(inputValue, firstValue);
+      let indexNum = findIndex(inputValue, firstValue);
       console.log(indexNum);
 
       // 가장 큰 값을 배열에서 제외시키는 로직
       inputValue.splice(indexNum, 1);
-      const secondArrangments = inputValue;
 
       // 두번째 큰 값을 찾는 로직
-      bigNumber = secondArrangments[0];
-      const secondValue = findLargeNum(secondArrangments, bigNumber);
+      const secondValue = findLargeNum(inputValue);
       console.log(secondValue);
 
       largeValues.push(secondValue);
 
+      indexNum = findIndex(inputValue, secondValue);
+      inputValue.splice(indexNum, 1);
+
+      // 세번째 큰 값을 찾는 로직
+      const thirdValue = findLargeNum(inputValue);
+      largeValues.push(thirdValue);
+
+      indexNum = findIndex(inputValue, thirdValue);
+      inputValue.splice(indexNum, 1);
+
+      // 네번째 큰 값을 찾는 로직
+      const fourthValue = findLargeNum(inputValue);
+      largeValues.push(fourthValue);
+
+      // 가장 큰 순서대로 배열정리
+      alert(largeValues);
       // 함수들-------------------------------------------------
 
       // 가장 큰 값을 구하고 가장 큰 값을 배열에 담은 첫번째 로직
