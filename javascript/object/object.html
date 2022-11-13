@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체</title>
+  </head>
+  <body>
+    <!--
+      객체는 배열과 유사한 역할을 함(데이터를 담아내는 그릇이라는 점이 동일)
+
+      *가시적인 차이
+      배열은 a,b,c 가 있으면 자동적으로 0,1,2 라는 index 번호를 가지는데,
+      객체는 a,b,c 가 있으면 first, second, third... => 인덱스로 우리가 원하는 지정값을 정할 수 있음(꼭 숫자가 아니더라도 문자도 가능)
+    
+      javascript의 객체는 다른 언어에서 연관배열(associative array) 또는 맵( map), 딕셔너리(Dictionary)라는 데이터 타입이 객체에 해당
+
+      배열 - []
+      객체 - {}
+    -->
+    <script>
+      // 객체를 사용할 수 있는 1번째 방법
+      const grades = { admin: 10, gywjd: 6, happy: 80 };
+      // index(key) - admin / index값(value) 10
+
+      // 객체를 사용할 수 있는 2번째 방법
+      const glades = {}; // = const glades = new object();
+      glades["admin"] = 10; // 비어있는 객체를 접근할 때
+      glades["gywjd"] = 6;
+      glades["happy"] = 80;
+    </script>
+  </body>
+</html>
