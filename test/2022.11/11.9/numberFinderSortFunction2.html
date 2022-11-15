@@ -27,7 +27,10 @@
     <script>
       const count = 4;
       const inputValue = []; //사용자에게 입력 받은 숫자 값들
+      const largeValues = []; // 큰 순서를 담을 로직
+      const nth = 2; // 몇 번째 큰 수인지
 
+      // 사용자에게 입력받을 숫자들
       for (let i = 0; i < count; i++) {
         const inputNum = +prompt(i + 1 + "숫자를 입력하여주세요.");
         if (/[0-9]/.test(inputNum)) {
@@ -38,52 +41,28 @@
       }
 
       // 2) 의 방식을 사용하여 로직 풀어보기
-
-      const largeValues = []; // 큰 순서를 담을 로직
-      const firstValue = findLargeNum(inputValue);
-      largeValues.push(firstValue);
-
-      let indexNum = findIndex(inputValue, firstValue);
-      console.log(indexNum);
-
-      // 가장 큰 값을 배열에서 제외시키는 로직
-      inputValue.splice(indexNum, 1);
-
-      // 두번째 큰 값을 찾는 로직
-      const secondValue = findLargeNum(inputValue);
-      console.log(secondValue);
-
-      largeValues.push(secondValue);
-
-      indexNum = findIndex(inputValue, secondValue);
-      inputValue.splice(indexNum, 1);
-
-      // 세번째 큰 값을 찾는 로직
-      const thirdValue = findLargeNum(inputValue);
-      largeValues.push(thirdValue);
-
-      indexNum = findIndex(inputValue, thirdValue);
-      inputValue.splice(indexNum, 1);
-
-      // 네번째 큰 값을 찾는 로직
-      const fourthValue = findLargeNum(inputValue);
-      largeValues.push(fourthValue);
+      for (let i = 0; i < count; i++) {
+        largeValues[i] = findLargeNum(inputValue);
+        indexNum = findIndex(inputValue, largeValues[i]);
+        inputValue.splice(indexNum, 1);
+      }
 
       // 가장 큰 순서대로 배열정리
       alert(largeValues);
-      // 함수들-------------------------------------------------
+      // n번째 큰 수
+      alert(largeValues[nth - 1]);
 
+      // 함수들-------------------------------------------------
       // 가장 큰 값을 구하고 가장 큰 값을 배열에 담은 첫번째 로직
       function findLargeNum(arrangment) {
         let bigNumber = inputValue[0]; // 가장 큰 값을 가정
-        for (let i = 0; i < arrangment.length; i++) {
+        for (let i = 1; i < arrangment.length; i++) {
           if (arrangment[i] > bigNumber) {
             bigNumber = arrangment[i];
           }
         }
         return bigNumber;
       }
-
       // 배열 인덱스 번호를 찾는 함수 로직
       function findIndex(arrangment, value) {
         for (let i = 0; i < arrangment.length; i++) {
