@@ -20,10 +20,22 @@
       const arrangments = [112, 234, 223425, 4545, 45];
       let largeNumber = arrangments[0];
 
-      /*가장 큰 값을 찾는 함수 로직*/
       const firstValue = findLargeNum(arrangments, largeNumber);
       console.log(firstValue);
 
+      largeNumber = firstValue; // function 이라 정의가 팔요
+
+      const indexNum = findIndex(arrangments, largeNumber);
+      console.log(indexNum);
+
+      arrangments.splice(indexNum, 1);
+      const secondArrangments = arrangments; // 가장 큰 값을 제거 한 배열값 -> arrangments 이게 이미 큰 값을 제외한 배열값임.굳이 있어야할 코드일까?
+
+      largeNumber = secondArrangments[0];
+      const secondValue = findLargeNum(secondArrangments, largeNumber);
+      console.log(secondValue);
+
+      /*가장 큰 값을 찾는 함수 로직*/
       function findLargeNum(arrangment, value) {
         for (let i = 0; i < arrangment.length; i++) {
           if (arrangment[i] > value) {
@@ -32,11 +44,6 @@
         }
         return value;
       }
-
-      largeNumber = firstValue; // function 이라 정의가 팔요
-
-      const indexNum = findIndex(arrangments, largeNumber);
-      console.log(indexNum);
 
       // 배열 인덱스 번호를 찾는 함수 로직
       function findIndex(arrangment, value) {
@@ -47,13 +54,6 @@
         }
         return -1;
       }
-
-      arrangments.splice(indexNum, 1);
-      const secondArrangments = arrangments; // 가장 큰 값을 제거 한 배열값
-
-      largeNumber = secondArrangments[0];
-      const secondValue = findLargeNum(secondArrangments, largeNumber);
-      console.log(secondValue);
     </script>
   </body>
 </html>

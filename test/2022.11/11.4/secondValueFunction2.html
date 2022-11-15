@@ -16,10 +16,17 @@
     <script>
       const arrangments = [112, 234, 223425, 4545, 45];
 
-      /*가장 큰 값을 찾는 함수 로직*/
       const firstValue = findLargeNum(arrangments);
       console.log(firstValue);
 
+      const indexNum = findIndex(arrangments, firstValue);
+      console.log(indexNum);
+
+      arrangments.splice(indexNum, 1);
+      const secondValue = findLargeNum(arrangments);
+      console.log(secondValue);
+
+      /*가장 큰 값을 찾는 함수 로직*/
       function findLargeNum(arrangment) {
         let largeNumber = arrangment[0];
         for (let i = 1; i < arrangment.length; i++) {
@@ -29,10 +36,6 @@
         }
         return largeNumber;
       }
-
-      const indexNum = findIndex(arrangments, firstValue);
-      console.log(indexNum);
-
       // 배열 인덱스 번호를 찾는 함수 로직
       function findIndex(arrangment, value) {
         for (let i = 0; i < arrangment.length; i++) {
@@ -42,10 +45,6 @@
         }
         return -1;
       }
-
-      arrangments.splice(indexNum, 1);
-      const secondValue = findLargeNum(arrangments);
-      console.log(secondValue);
     </script>
   </body>
 </html>
