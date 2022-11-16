@@ -4,9 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>객체</title>
+    <title>객체를 다루는 법</title>
   </head>
   <body>
-    <script></script>
+    <script>
+      // 반복문을 이용하여 객체를 다루는 법
+      let arr = ["a", "b", "c"];
+      for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+      }
+
+      // 배열은 저장된 데이터들이 순서를 가지고 있음 / 먼저 들어간 것과 나중에 들어간 것이 정해져있어 순서대로 원하는 걸 가져올 수 있음
+      // 객체는 순서가 없고 key와 value가 존재함 / key와 value가 존재할 때 순서가 존재하지 않음
+
+      // 배열에 있는 값을 가져올 때는 for in문을 가져오게 됨
+      let grades = { admin: 10, gywjd: 6, happy: 80 };
+      for (key in grades) {
+        // grades변수가 가르키는 그릇에 담겨있는 값들을 반복문이 실행될 때 마다 하나씩 가져와서 key값을 key에 담는다
+        document.write("key:" + key + " value : " + grades[key] + "<br>");
+      } // key 를 호출하면 admin, gywjd, hpaay가 출력되고
+      // grades[key] 를 호출하면 10, 6, 80 이 출력됨
+    </script>
   </body>
 </html>
