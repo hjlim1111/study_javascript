@@ -10,11 +10,16 @@
     <script>
       let grades = {
         list: { admin: 10, gywjd: 6, happy: 80 }, // 객체 안에 또 다시 객체가 들어올 수 있음
+        // grades라는 변수에 담긴 객체 안에는  list라는 key가 있고, key안에 담겨있는 값은 또 다른 객체이다
+        // grades 안에 들어있는 객체에 접근할 때 => grades['list']
+        // admin이 담고있는 10이라는 값에 접근하고 싶으면 grades['list']['admin'] 으로 하면 됨
         show: function () {
+          // 객체 안에 또 다른 값이 담을 수 있는데 함수도 담길 수 있음
           for (let name in this.list) {
             document.write(name + ":" + this.list[name] + "<br />");
           }
         },
+        // this => 약속되어있는 변수. 함수가 속해있는 객체를 가르킴
       };
       grades.show();
     </script>
