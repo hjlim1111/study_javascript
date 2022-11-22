@@ -16,23 +16,18 @@
     <script>
       let height = 4;
       function pyramid() {
-        for (let i = 0; i < height; i++) {
-          blank();
-          for (let j = 0; j < i; j++) {
+        for (let i = 1; i <= height; i++) {
+          const num = height - i;
+          for (let j = 1; j <= num; j++) {
+            document.write("&nbsp");
+          }
+          for (let j = 1; j < i; j++) {
             document.write("**");
           }
           document.write("*" + "<br>");
         }
       }
       pyramid();
-
-      // 빈칸 넣는 함수 로직
-      function blank() {
-        for (let i = 1; i <= height; i++) {
-          const num = height - i;
-          num * document.write("&nbsp");
-        }
-      }
     </script>
   </body>
 </html>
