@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>switch</title>
+  </head>
+  <body>
+    <script>
+      // switch/case문의 인수엔 어떤 표현식이든 올 수 있음
+      let a = "1";
+      let b = 0;
+
+      switch (+a) {
+        case b + 1:
+          alert("표현식 +a는 1, 표현식 b+1는 1이므로 이 코드가 실행됩니다.");
+          break;
+
+        default:
+          alert("이 코드는 실행되지 않습니다.");
+      }
+
+      // 여러개 case문 묶기
+      let c = 3;
+
+      switch (c) {
+        case 4:
+          alert("계산이 맞습니다!");
+          break;
+
+        case 3: // (*) 두 case문을 묶음
+        case 5:
+          alert("계산이 틀립니다!");
+          alert("수학 수업을 다시 들어보는걸 권유 드립니다.");
+          break;
+
+        default:
+          alert("계산 결과가 이상하네요.");
+      }
+
+      //---------------------------------------------------------------
+      // switch문은 일치 비교로 조건을 확인합니다. 비교하려는 값과 case문의 값의 형과 값이 같아야 해당 case문이 실행됩니다.
+      let arg = prompt("값을 입력해주세요.");
+      switch (arg) {
+        case "0":
+        case "1":
+          alert("0이나 1을 입력하셨습니다.");
+          break;
+
+        case "2":
+          alert("2를 입력하셨습니다.");
+          break;
+
+        case 3:
+          alert("이 코드는 절대 실행되지 않습니다!");
+          break;
+        default:
+          alert("알 수 없는 값을 입력하셨습니다.");
+      }
+    </script>
+  </body>
+</html>
