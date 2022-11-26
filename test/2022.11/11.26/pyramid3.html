@@ -15,7 +15,12 @@
     -->
     <script>
       let height = 4;
-      function pyramid() {
+      pyramidTop();
+      pyramidBottom();
+
+      // 함수 모음집------------------------------------
+      // 위 삼각형 함수
+      function pyramidTop() {
         for (let i = 0; i < height; i++) {
           blank(i + 1);
           for (let j = 0; j < i; j++) {
@@ -24,11 +29,28 @@
           document.write("*" + "<br>");
         }
       }
-      pyramid();
-
-      // 빈칸 넣는 함수 로직
+      // 빈칸 넣는 함수
       function blank(i) {
         const space = height - i;
+        for (let i = 0; i < space; i++) {
+          document.write("&nbsp");
+        }
+      }
+
+      // 아래 삼각형 함수
+      function pyramidBottom() {
+        for (let i = 0; i < height; i++) {
+          blankBottom(i + 1);
+          document.write("*");
+          for (let j = 0; j > i; j++) {
+            document.write("**");
+          }
+          document.write("<br>");
+        }
+      }
+      // 빈칸 넣는 함수
+      function blankBottom(i) {
+        const space = i;
         for (let i = 0; i < space; i++) {
           document.write("&nbsp");
         }
