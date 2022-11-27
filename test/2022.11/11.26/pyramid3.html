@@ -16,7 +16,7 @@
     <script>
       let height = 4;
       pyramidTop();
-      pyramidBottom();
+      //pyramidBottom();
 
       // 함수 모음집------------------------------------
       // 위 삼각형 함수
@@ -37,6 +37,33 @@
         }
       }
 
+      // 반복문을 사용하지 않고 로직
+      // document.write("&nbsp");
+      // document.write("*");
+      // document.write("**");
+      // document.write("**" + "<br>");
+      // document.write("&nbsp");
+      // document.write("&nbsp");
+      // document.write("*");
+      // document.write("**" + "<br>");
+      // document.write("&nbsp");
+      // document.write("&nbsp");
+      // document.write("&nbsp");
+      // document.write("*");
+
+      for (let i = 1; i < height; i++) {
+        for (let j = 0; j < i; j++) {
+          document.write("&nbsp");
+        }
+        document.write("*");
+        for (let j = 1; j < height - i; j++) {
+          document.write("**");
+        }
+        document.write("<br>");
+      }
+
+      /*
+      처음에 짠 로직 (완성아님)
       // 아래 삼각형 함수
       function pyramidBottom() {
         for (let i = 0; i < height; i++) {
@@ -55,6 +82,7 @@
           document.write("&nbsp");
         }
       }
+      */
     </script>
   </body>
 </html>
