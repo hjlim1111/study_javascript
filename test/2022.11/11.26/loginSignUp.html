@@ -17,7 +17,43 @@
       3. 비밀번호
       이미 가입된 아이디 확인
       로그인 후 화면에 로그인 유저의 이름을 출력
+
+      //--------------------------------------------
+      // 데이터 저장하기
+      localStorage.setItem(key, value);
+
+      // 데이터 불러오기
+      localStorage.getItem(key);
+
+      // 데이터 삭제
+      localStorage.removeItem(key);
+
+      // 모든 것 삭제
+      localStorage.clear();
+
+      // index에 해당하는 키 소환
+      localStorage.key(index);
+
+      // 저장된 항목의 수
+      localStorage.length;
     -->
-    <script></script>
+    <script>
+      // setItem
+      window.localStorage.setItem("name", "임효정");
+      window.localStorage.setItem("id", "gywjd");
+      window.localStorage.setItem("id", "admin");
+
+      // getItem
+      const name = window.localStorage.getItem("name");
+      const id = window.localStorage.getItem("id");
+      const pw = window.localStorage.getItem("pw");
+
+      // 결과 출력
+      document.write(name); // 임효정
+      document.write("<br/>");
+      document.write(id); // gywjd
+
+      console.log(localStorage.length);
+    </script>
   </body>
 </html>
