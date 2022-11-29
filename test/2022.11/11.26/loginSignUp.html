@@ -5,6 +5,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>회원가입 및 로그인 페이지</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: "Noto Sans KR", sans-serif;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .logo {
+        text-align: center;
+        margin-top: 100px;
+        margin-bottom: 58px;
+      }
+
+      .logo h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 36px;
+        font-weight: 500;
+        color: #3a332e; /*5a4f46*/
+        letter-spacing: 3px;
+        transition: 0.6s;
+      }
+      .logo h3 {
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        color: #3a332e;
+        letter-spacing: 1px;
+      }
+
+      ul {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+      }
+
+      ul > li {
+        border-right: 1px solid #ccc;
+        line-height: 10px;
+      }
+      ul > li:last-child {
+        border-right: none;
+      }
+
+      ul > li > a {
+        font-size: 13px;
+        color: #ccc;
+        padding: 0 10px;
+      }
+      p {
+        text-align: center;
+        font-size: 16px;
+        margin-top: 100px;
+        font-weight: 300;
+      }
+      input {
+        width: 380px;
+        height: 46px;
+        display: block;
+        margin: auto;
+        padding-left: 20px;
+        margin-bottom: 10px;
+        border: 1px solid rgb(209, 209, 209);
+        border-radius: 6px;
+      }
+      button {
+        width: 400px;
+        height: 46px;
+        display: block;
+        margin: auto;
+        border: 1px solid #e8d7c3;
+        border-radius: 6px;
+        background-color: #e8d7c3;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
     <!--
@@ -37,6 +122,29 @@
       // 저장된 항목의 수
       localStorage.length;
     -->
+    <h1 class="logo">
+      <a href="index.html">
+        <h1>THE SHILLA</h1>
+        <h3>HOTELS & RESORTS</h3>
+      </a>
+    </h1>
+
+    <div class="loginForm">
+      <form action="">
+        <input type="text" name="" id="loginId" placeholder="아이디" />
+        <input type="password" name="" id="pw" placeholder="비밀번호" />
+        <button type="button" id="myBtn">로그인</button>
+      </form>
+    </div>
+    <ul>
+      <li><a href="#">비밀번호 찾기</a></li>
+      <li><a href="#">아이디 찾기</a></li>
+      <li><a href="#">회원가입</a></li>
+    </ul>
+    <p>
+      아이디 : admin 비밀번호 : 111111<br />위의 설정값을 입력하여 로그인하여
+      보세요.
+    </p>
     <script>
       // setItem
       window.localStorage.setItem("name", "임효정");
@@ -55,7 +163,25 @@
       document.write("<br/>");
       document.write(pw); // admin
 
+      //localStorage에 몇개의 데이터 값이 담기는 지
       console.log(localStorage.length);
+
+      function testLogin() {
+        const id = document.getElementById("loginId").value;
+        const pw = document.getElementById("pw").value;
+
+        if (id === "admin" && pw === "111111") {
+          alert("로그인되었습니다.");
+        } else {
+          alert("아이디, 비밀번호를 확인하여 주세요.");
+          id.focus();
+        }
+      }
+
+      myBtn.addEventListener("click", function (event) {
+        // 클릭이벤트
+        testLogin();
+      });
     </script>
   </body>
 </html>
