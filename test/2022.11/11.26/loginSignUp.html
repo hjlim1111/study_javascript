@@ -22,53 +22,16 @@
         max-width: 100%;
       }
 
-      .logo {
+      h2 {
         text-align: center;
-        margin-top: 100px;
-        margin-bottom: 58px;
-      }
-
-      .logo h1 {
-        font-family: "Playfair Display", serif;
-        font-size: 36px;
-        font-weight: 500;
-        color: #3a332e; /*5a4f46*/
-        letter-spacing: 3px;
-        transition: 0.6s;
-      }
-      .logo h3 {
-        font-family: "Roboto", sans-serif;
-        font-size: 20px;
-        font-weight: 400;
-        color: #3a332e;
-        letter-spacing: 1px;
-      }
-
-      ul {
-        margin-top: 30px;
-        display: flex;
-        justify-content: center;
-      }
-
-      ul > li {
-        border-right: 1px solid #ccc;
-        line-height: 10px;
-      }
-      ul > li:last-child {
-        border-right: none;
-      }
-
-      ul > li > a {
-        font-size: 13px;
-        color: #ccc;
-        padding: 0 10px;
-      }
-      p {
-        text-align: center;
-        font-size: 16px;
-        margin-top: 100px;
+        font-size: 26px;
         font-weight: 300;
+        margin-top: 100px;
       }
+      .loginForm {
+        margin-top: 50px;
+      }
+
       input {
         width: 380px;
         height: 46px;
@@ -122,29 +85,17 @@
       // 저장된 항목의 수
       localStorage.length;
     -->
-    <h1 class="logo">
-      <a href="index.html">
-        <h1>THE SHILLA</h1>
-        <h3>HOTELS & RESORTS</h3>
-      </a>
-    </h1>
+    <h2>회원가입</h2>
 
     <div class="loginForm">
       <form action="">
+        <input type="text" name="" id="user" placeholder="이름" />
         <input type="text" name="" id="loginId" placeholder="아이디" />
         <input type="password" name="" id="pwd" placeholder="비밀번호" />
-        <button type="button" id="myBtn">로그인</button>
+        <button type="button" id="myBtn">회원가입</button>
       </form>
     </div>
-    <ul>
-      <li><a href="#">비밀번호 찾기</a></li>
-      <li><a href="#">아이디 찾기</a></li>
-      <li><a href="#">회원가입</a></li>
-    </ul>
-    <p>
-      아이디 : gywjd 비밀번호 : admin<br />위의 설정값을 입력하여 로그인하여
-      보세요.
-    </p>
+
     <script>
       // setItem
       window.localStorage.setItem("name", "임효정");
@@ -167,21 +118,24 @@
       console.log(localStorage.length);
 
       function testLogin() {
+        const user = document.getElementById("user").value;
         const id = document.getElementById("loginId").value;
         const pwd = document.getElementById("pwd").value;
 
         if (id === "gywjd" && pwd === "admin") {
-          alert("로그인되었습니다.");
+          alert(user + "님 로그인되었습니다");
         } else {
           alert("아이디, 비밀번호를 확인하여 주세요.");
           id.focus();
         }
       }
 
+      // myBtn 버튼을 클릭하였을 때 로그인이 진행되는 로직
       myBtn.addEventListener("click", function (event) {
         // 클릭이벤트
         testLogin();
       });
+      // enter을 눌러도 로그인이 진행되게 하는 로직
       pwd.addEventListener("keyup", function (event) {
         if (event.keyCode === 13) {
           event.preventDefault(); // 키 입력값이 입력칸을 채우는 것을 방지 => 지금은 그렇게 필요한 로직은 아님
