@@ -14,7 +14,7 @@
         -홀수로 *의 개수를 설정해야 예쁜 피라미드 완성 (가운데로 정렬 맞추기)
     -->
     <script>
-      let height = 4;
+      let height = 10;
       pyramidTop();
       pyramidBottom();
 
@@ -22,7 +22,7 @@
       // 위 삼각형 함수
       function pyramidTop() {
         for (let i = 0; i < height; i++) {
-          blank(i + 1);
+          blank(height - (i + 1));
           for (let j = 0; j < i; j++) {
             document.write("**");
           }
@@ -30,18 +30,15 @@
         }
       }
       // 빈칸 넣는 함수
-      function blank(i) {
-        const space = height - i;
-        for (let i = 0; i < space; i++) {
-          document.write("&nbsp");
+      function blank(spaceCnt) {
+        for (let i = 0; i < spaceCnt; i++) {
+          document.write("-");
         }
       }
 
       function pyramidBottom() {
         for (let i = 1; i < height; i++) {
-          for (let j = 0; j < i; j++) {
-            document.write("&nbsp");
-          }
+          blank(i);
           document.write("*");
           for (let j = 1; j < height - i; j++) {
             document.write("**");
@@ -49,28 +46,6 @@
           document.write("<br>");
         }
       }
-
-      /*
-      처음에 짠 로직 (완성아님)
-      // 아래 삼각형 함수
-      function pyramidBottom() {
-        for (let i = 0; i < height; i++) {
-          blankBottom(i + 1);
-          document.write("*");
-          for (let j = 0; j > i; j++) {
-            document.write("**");
-          }
-          document.write("<br>");
-        }
-      }
-      // 빈칸 넣는 함수
-      function blankBottom(i) {
-        const space = i;
-        for (let i = 0; i < space; i++) {
-          document.write("&nbsp");
-        }
-      }
-      */
     </script>
   </body>
 </html>
