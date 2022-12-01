@@ -98,9 +98,13 @@
 
     <script>
       // setItem
-      window.localStorage.setItem("name", "임효정");
-      window.localStorage.setItem("id", "gywjd");
-      window.localStorage.setItem("pw", "admin");
+      //localStorage 한번 로컬에 저장하면 새로 저장하지 않아도 저장이 됨
+      // 동일한 키로 value를 저장하면 전에 있는 value값이 사라지고 새로운 값이 저장된다
+      // 초기에 밑에 있는 로직으로 localStorage에 값을 저장하면 이미 local에 저장이 되어서 밑에 있는 로직을 냅둔다면 계속해서 그 값을 새로 저장한다는 뜻이 됨
+      // 한번 입력한 값은 vscode에서 코드를 지운다 하더라도 local에서는 남아있기 때문에 전에 있던 저장된 값을 지우려면 localStorage.removeItem(key); 이것을 사용해야지 지울 수 있다
+      // window.localStorage.setItem("name", "권기웅");
+      // window.localStorage.setItem("id", "rldnd");
+      // window.localStorage.setItem("pw", "admin");
 
       // getItem
       const name = window.localStorage.getItem("name");
