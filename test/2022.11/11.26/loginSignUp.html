@@ -90,9 +90,18 @@
     <div class="loginForm">
       <form action="">
         <input type="text" name="" id="user" placeholder="이름" />
-        <input type="text" name="" id="loginId" placeholder="아이디" />
-        <input type="password" name="" id="pwd" placeholder="비밀번호" />
+        <input type="text" name="" id="signUpId" placeholder="아이디" />
+        <input type="password" name="" id="signUpPw" placeholder="비밀번호" />
         <button type="button" id="myBtn">회원가입</button>
+      </form>
+    </div>
+
+    <h2>로그인</h2>
+    <div class="loginForm">
+      <form action="">
+        <input type="text" name="" id="loginId" placeholder="아이디" />
+        <input type="password" name="" id="loginPw" placeholder="비밀번호" />
+        <button type="button" id="loginBtn">로그인</button>
       </form>
     </div>
 
@@ -102,29 +111,29 @@
       // 동일한 키로 value를 저장하면 전에 있는 value값이 사라지고 새로운 값이 저장된다
       // 초기에 밑에 있는 로직으로 localStorage에 값을 저장하면 이미 local에 저장이 되어서 밑에 있는 로직을 냅둔다면 계속해서 그 값을 새로 저장한다는 뜻이 됨
       // 한번 입력한 값은 vscode에서 코드를 지운다 하더라도 local에서는 남아있기 때문에 전에 있던 저장된 값을 지우려면 localStorage.removeItem(key); 이것을 사용해야지 지울 수 있다
-      // window.localStorage.setItem("name", "권기웅");
-      // window.localStorage.setItem("id", "rldnd");
+      // window.localStorage.setItem("name", "임효정");
+      // window.localStorage.setItem("id", "gywjd");
       // window.localStorage.setItem("pw", "admin");
 
       // getItem
       const name = window.localStorage.getItem("name");
       const id = window.localStorage.getItem("id");
-      const pw = window.localStorage.getItem("pw");
+      // const pw = window.localStorage.getItem("pw"); -> 비밀번호 같은 중요한 정보는 저장하면 안됨
 
       // 결과 출력
       document.write(name); // 임효정
       document.write("<br/>");
       document.write(id); // gywjd
       document.write("<br/>");
-      document.write(pw); // admin
+      //document.write(pw); // admin
 
       //localStorage에 몇개의 데이터 값이 담기는 지
       console.log(localStorage.length);
 
       function testLogin() {
         const user = document.getElementById("user").value;
-        const id = document.getElementById("loginId").value;
-        const pwd = document.getElementById("pwd").value;
+        const id = document.getElementById("signUpId").value;
+        const pwd = document.getElementById("signUpPw").value;
 
         if (id === "gywjd" && pwd === "admin") {
           alert(user + "님 로그인되었습니다");
@@ -140,7 +149,7 @@
         testLogin();
       });
       // enter을 눌러도 로그인이 진행되게 하는 로직
-      pwd.addEventListener("keyup", function (event) {
+      signUpPw.addEventListener("keyup", function (event) {
         if (event.keyCode === 13) {
           event.preventDefault(); // 키 입력값이 입력칸을 채우는 것을 방지 => 지금은 그렇게 필요한 로직은 아님
           testLogin(); //document.getElementById("myBtn").click(); 와 동일
