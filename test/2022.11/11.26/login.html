@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: "Noto Sans KR", sans-serif;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 26px;
+        font-weight: 300;
+        margin-top: 100px;
+      }
+      .loginForm {
+        margin-top: 50px;
+      }
+
+      input {
+        width: 380px;
+        height: 46px;
+        display: block;
+        margin: auto;
+        padding-left: 20px;
+        margin-bottom: 10px;
+        border: 1px solid rgb(209, 209, 209);
+        border-radius: 6px;
+      }
+      button {
+        width: 400px;
+        height: 46px;
+        display: block;
+        margin: auto;
+        border: 1px solid #e8d7c3;
+        border-radius: 6px;
+        background-color: #e8d7c3;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>로그인</h2>
+    <div class="loginForm">
+      <form action="">
+        <input type="text" name="" id="loginId" placeholder="아이디" />
+        <input type="password" name="" id="loginPw" placeholder="비밀번호" />
+        <button type="button" id="loginBtn">로그인</button>
+      </form>
+    </div>
+    <script>
+      //로그인
+      function login() {
+        const user = document.getElementById("user").value;
+        const id = document.getElementById("signUpId").value;
+        const pwd = document.getElementById("signUpPw").value;
+
+        if (id === "gywjd" && pwd === "admin") {
+          alert(user + "님 로그인되었습니다");
+        } else {
+          alert("아이디, 비밀번호를 확인하여 주세요.");
+          id.focus();
+        }
+      }
+
+      // loginBtn 버튼을 클릭하였을 때 로그인이 진행되는 로직
+      loginBtn.addEventListener("click", function (event) {
+        // 클릭이벤트
+        login();
+      });
+      // enter을 눌러도 로그인이 진행되게 하는 로직
+      signUpPw.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+          event.preventDefault(); // 키 입력값이 입력칸을 채우는 것을 방지 => 지금은 그렇게 필요한 로직은 아님
+          testLogin(); //document.getElementById("myBtn").click(); 와 동일
+        }
+      });
+    </script>
+  </body>
+</html>
