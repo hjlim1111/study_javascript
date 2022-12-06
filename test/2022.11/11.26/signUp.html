@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 및 로그인 페이지</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: "Noto Sans KR", sans-serif;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 26px;
+        font-weight: 300;
+        margin-top: 100px;
+      }
+      .loginForm {
+        margin-top: 50px;
+      }
+
+      input {
+        width: 380px;
+        height: 46px;
+        display: block;
+        margin: auto;
+        padding-left: 20px;
+        margin-bottom: 10px;
+        border: 1px solid rgb(209, 209, 209);
+        border-radius: 6px;
+      }
+      button {
+        width: 400px;
+        height: 46px;
+        display: block;
+        margin: auto;
+        border: 1px solid #e8d7c3;
+        border-radius: 6px;
+        background-color: #e8d7c3;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      [문제]
+      localstorage 활용하여 로그인 회원가입 만들기
+
+      [회원가입할 때 데이터] 
+      1. 이름
+      2. 아이디
+      3. 비밀번호
+      이미 가입된 아이디 확인
+      로그인 후 화면에 로그인 유저의 이름을 출력
+
+      //--------------------------------------------
+      // 데이터 저장하기
+      localStorage.setItem(key, value);
+
+      // 데이터 불러오기
+      localStorage.getItem(key);
+
+      // 데이터 삭제
+      localStorage.removeItem(key);
+
+      // 모든 것 삭제
+      localStorage.clear();
+
+      // index에 해당하는 키 소환
+      localStorage.key(index);
+
+      // 저장된 항목의 수
+      localStorage.length;
+    -->
+    <h2>회원가입</h2>
+
+    <div class="loginForm">
+      <form action="">
+        <input type="text" name="" id="user" placeholder="이름" />
+        <input type="text" name="" id="signUpId" placeholder="아이디" />
+        <input type="password" name="" id="signUpPw" placeholder="비밀번호" />
+        <button type="button" id="myBtn">회원가입</button>
+      </form>
+    </div>
+
+    <script>
+      // setItem
+      //localStorage 한번 로컬에 저장하면 새로 저장하지 않아도 저장이 됨
+      // 동일한 키로 value를 저장하면 전에 있는 value값이 사라지고 새로운 값이 저장된다
+      // 초기에 밑에 있는 로직으로 localStorage에 값을 저장하면 이미 local에 저장이 되어서 밑에 있는 로직을 냅둔다면 계속해서 그 값을 새로 저장한다는 뜻이 됨
+      // 한번 입력한 값은 vscode에서 코드를 지운다 하더라도 local에서는 남아있기 때문에 전에 있던 저장된 값을 지우려면 localStorage.removeItem(key); 이것을 사용해야지 지울 수 있다
+      // window.localStorage.setItem("name", "임효정");
+      // window.localStorage.setItem("id", "gywjd");
+      // window.localStorage.setItem("pw", "admin");
+
+      // getItem
+      const name = window.localStorage.getItem("name");
+      const id = window.localStorage.getItem("id");
+      // const pw = window.localStorage.getItem("pw"); -> 비밀번호 같은 중요한 정보는 저장하면 안됨
+
+      // 결과 출력
+      document.write(name); // 임효정
+      document.write("<br/>");
+      document.write(id); // gywjd
+      document.write("<br/>");
+      //document.write(pw); // admin
+
+      //localStorage에 몇개의 데이터 값이 담기는 지
+      console.log(localStorage.length);
+
+      //회원가입
+      function testLogin() {
+        const loginId = document.getElementById("loginId").value;
+        const loginPw = document.getElementById("loginPw").value;
+
+        if (id === "gywjd" && pwd === "admin") {
+          alert(user + "님 로그인되었습니다");
+        } else {
+          alert("아이디, 비밀번호를 확인하여 주세요.");
+          id.focus();
+        }
+      }
+
+      // myBtn 버튼을 클릭하였을 때 로그인이 진행되는 로직
+      myBtn.addEventListener("click", function (event) {
+        // 클릭이벤트
+        testLogin();
+      });
+      // enter을 눌러도 로그인이 진행되게 하는 로직
+      signUpPw.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+          event.preventDefault(); // 키 입력값이 입력칸을 채우는 것을 방지 => 지금은 그렇게 필요한 로직은 아님
+          testLogin(); //document.getElementById("myBtn").click(); 와 동일
+        }
+      });
+    </script>
+  </body>
+</html>
