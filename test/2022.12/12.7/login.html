@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>로그인</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
   <body>
     <h2>로그인</h2>
@@ -16,13 +17,20 @@
       </form>
     </div>
     <script>
+      // getItem
+      const user = window.localStorage.getItem("name");
+      const id = window.localStorage.getItem("id");
+      const pw = window.localStorage.getItem("pw");
+
+      console.log(user);
+      console.log(id);
+      console.log(pw);
       //로그인
       function login() {
-        const user = document.getElementById("user").value;
-        const id = document.getElementById("signUpId").value;
-        const pwd = document.getElementById("signUpPw").value;
+        const loginId = document.getElementById("loginId").value;
+        const loginPw = document.getElementById("loginPw").value;
 
-        if (id === "gywjd" && pwd === "admin") {
+        if (loginId === id && loginPw === pw) {
           alert(user + "님 로그인되었습니다");
         } else {
           alert("아이디, 비밀번호를 확인하여 주세요.");
@@ -36,10 +44,10 @@
         login();
       });
       // enter을 눌러도 로그인이 진행되게 하는 로직
-      signUpPw.addEventListener("keyup", function (event) {
+      loginPw.addEventListener("keyup", function (event) {
         if (event.keyCode === 13) {
           event.preventDefault(); // 키 입력값이 입력칸을 채우는 것을 방지 => 지금은 그렇게 필요한 로직은 아님
-          testLogin(); //document.getElementById("myBtn").click(); 와 동일
+          login(); //document.getElementById("myBtn").click(); 와 동일
         }
       });
     </script>
