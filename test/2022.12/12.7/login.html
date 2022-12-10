@@ -32,6 +32,9 @@
 
         if (loginId === id && loginPw === pw) {
           alert(user + "님 로그인되었습니다");
+          // 로그인 완료 페이지 이동
+          location.href =
+            "http://127.0.0.1:5500/test/2022.12/12.7/loginSuccess.html";
         } else {
           alert("아이디, 비밀번호를 확인하여 주세요.");
           id.focus();
