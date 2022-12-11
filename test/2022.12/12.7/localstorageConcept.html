@@ -27,5 +27,37 @@
 
     <p>removeItem(key)</p>
     <!--해당 키에 있는 데이터를 모두 삭제함-->
+
+    <script>
+      localStorage.setItem("email", "test@user.com");
+      // undefined
+      localStorage.getItem("email");
+      // "test@user.com"
+      localStorage.setItem("email", "test@admin.com");
+      // undefined
+      localStorage.getItem("email");
+      // "test@admin.com"
+      localStorage.removeItem("email");
+      // undefined
+      localStorage.getItem("email");
+      // null
+      // 값이 쌓이는 것이 아니라 하나의 값을 담고 값이 지워지기 때문에 getItem으로 불러오면 null 값이 뜸
+
+      // -------------------------------------------
+
+      // string 데이터 타입만 지원함
+      localStorage.setItem("num", 1);
+      // undefined
+      localStorage.getItem("num") === 1;
+      // false
+      localStorage.getItem("num");
+      // "1"
+      typeof localStorage.getItem("num");
+      // "string"
+      localStorage.getItem("num") === "1";
+      // ture
+
+      // -------------------------------------------
+    </script>
   </body>
 </html>
