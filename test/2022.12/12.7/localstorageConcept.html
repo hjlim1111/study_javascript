@@ -58,6 +58,25 @@
       // ture
 
       // -------------------------------------------
+      // string 데이터 타입만 지원하는 예
+      localStorage.setItem("obj", { a: 1, b: 2 });
+      // undefined
+      localStorage.getItem("obj");
+      // "[object Object]"
+      String(1);
+      // "1"
+      String({ a: 1, b: 2 });
+      // "[object Object]"
+
+      // 해결방법-------------------------------------
+      localStorage.setItem("json", JSON.stringify({ a: 1, b: 2 }));
+      // undefined
+      JSON.parse(localStorage.getItem("json"));
+      // {a: 1, b: 2}
+      localStorage.setItem("nums", JSON.stringify([1, 2, 3]));
+      // undefined
+      JSON.parse(localStorage.getItem("nums"));
+      // [1, 2, 3]
     </script>
   </body>
 </html>
