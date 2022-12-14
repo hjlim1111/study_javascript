@@ -10,6 +10,7 @@
   <body>
     <!--
       [문제]
+      ------- 여러명이 회원가입할 수 있게. 데이터 담기
       localstorage 활용하여 로그인 회원가입 만들기
 
       [회원가입할 때 데이터] 
@@ -51,13 +52,17 @@
 
     <script>
       // setItem
+
       //localStorage 한번 로컬에 저장하면 새로 저장하지 않아도 저장이 됨
       // 동일한 키로 value를 저장하면 전에 있는 value값이 사라지고 새로운 값이 저장된다
       // 초기에 밑에 있는 로직으로 localStorage에 값을 저장하면 이미 local에 저장이 되어서 밑에 있는 로직을 냅둔다면 계속해서 그 값을 새로 저장한다는 뜻이 됨
       // 한번 입력한 값은 vscode에서 코드를 지운다 하더라도 local에서는 남아있기 때문에 전에 있던 저장된 값을 지우려면 localStorage.removeItem(key); 이것을 사용해야지 지울 수 있다
-      // window.localStorage.setItem("name", "임효정");
-      // window.localStorage.setItem("id", "gywjd");
-      // window.localStorage.setItem("pw", "admin");
+      const userName = document.querySelector("#user").value;
+      console.log(userName);
+
+      window.localStorage.setItem("name", "user");
+      window.localStorage.setItem("id", "signUpId");
+      window.localStorage.setItem("pw", "signUpPw");
 
       // getItem
       const name = window.localStorage.getItem("name");
@@ -74,23 +79,23 @@
       //localStorage에 몇개의 데이터 값이 담기는 지
       console.log(localStorage.length);
 
-      //회원가입
-      function testLogin() {
-        const signUpId = document.getElementById("signUpId").value;
-        const signUpPw = document.getElementById("signUpPw").value;
+      // 회원가입
+      // function testLogin() {
+      //   const signUpId = document.getElementById("signUpId").value;
+      //   const signUpPw = document.getElementById("signUpPw").value;
 
-        if (signUpId === id && signUpPw === pw) {
-          alert(name + "님 회원가입 축하드립니다!");
-          // 로그인 화면으로 페이지 이동
-          location.href = "http://127.0.0.1:5500/test/2022.12/12.7/login.html";
-        } else {
-          // 아이디 중복체크하기
-          if (signUpId === id) {
-            alert("이미 가입된 아이디 입니다.");
-            id.focus();
-          }
-        }
-      }
+      //   if (signUpId === id && signUpPw === pw) {
+      //     alert(name + "님 회원가입 축하드립니다!");
+      //     // 로그인 화면으로 페이지 이동
+      //     location.href = "http://127.0.0.1:5500/test/2022.12/12.7/login.html";
+      //   } else {
+      //     // 아이디 중복체크하기
+      //     if (signUpId === id) {
+      //       alert("이미 가입된 아이디 입니다.");
+      //       id.focus();
+      //     }
+      //   }
+      // }
 
       // myBtn 버튼을 클릭하였을 때 로그인이 진행되는 로직
       myBtn.addEventListener("click", function (event) {
