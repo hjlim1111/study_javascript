@@ -52,6 +52,7 @@
       });
 
       //----------------------------------------------------------
+
       // 멤버라는 변수에 이름, 아이디, 비밀번호의 값을 담고 그 값을 localstorage에 담는 함수로직
       // arrangment - 변수일 때 데이터의 개수가 늘어나면 그에 맞는 몇번째에 어느 데이터가 있는지 다 알아야 하기 때문에 많은 데이터를 담기에는 적합하지 않음
       /*
@@ -80,6 +81,8 @@
         } else {
           // localStorage 데이터저장
           localStorage.setItem(userIdInput.value, JSON.stringify(member));
+          alert(userNameInput.value + "님 회원가입을 축하합니다.");
+          location.href = "http://127.0.0.1:5500/test/2022.12/12.7/login.html";
         }
 
         // 다른방법 2
