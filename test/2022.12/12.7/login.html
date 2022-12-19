@@ -17,20 +17,15 @@
       </form>
     </div>
     <script>
-      // getItem
-      const user = window.localStorage.getItem("name");
-      const id = window.localStorage.getItem("id");
-      const pw = window.localStorage.getItem("pw");
+      // input 데이터 담기
+      const userIdInput = document.querySelector("#loginId");
+      const userPwInput = document.querySelector("#loginPw");
 
-      console.log(user);
-      console.log(id);
-      console.log(pw);
       //로그인
       function login() {
-        const loginId = document.getElementById("loginId").value;
-        const loginPw = document.getElementById("loginPw").value;
-
-        if (loginId === id && loginPw === pw) {
+        const loginId = userIdInput.value;
+        const loginPw = userPwInput.value;
+        if (userIdInput === id && loginPw === pw) {
           alert(user + "님 로그인되었습니다");
           // 로그인 완료 페이지 이동
           location.href =
@@ -49,8 +44,8 @@
       // enter을 눌러도 로그인이 진행되게 하는 로직
       loginPw.addEventListener("keyup", function (event) {
         if (event.keyCode === 13) {
-          event.preventDefault(); // 키 입력값이 입력칸을 채우는 것을 방지 => 지금은 그렇게 필요한 로직은 아님
-          login(); //document.getElementById("myBtn").click(); 와 동일
+          event.preventDefault();
+          login();
         }
       });
     </script>
