@@ -20,21 +20,7 @@
       // input 데이터 담기
       const userIdInput = document.querySelector("#loginId");
       const userPwInput = document.querySelector("#loginPw");
-
-      //로그인
-      function login() {
-        const loginId = userIdInput.value;
-        const loginPw = userPwInput.value;
-        if (userIdInput === id && loginPw === pw) {
-          alert(user + "님 로그인되었습니다");
-          // 로그인 완료 페이지 이동
-          location.href =
-            "http://127.0.0.1:5500/test/2022.12/12.7/loginSuccess.html";
-        } else {
-          alert("아이디, 비밀번호를 확인하여 주세요.");
-          id.focus();
-        }
-      }
+      const loginBtn = document.querySelector("#loginBtn");
 
       // loginBtn 버튼을 클릭하였을 때 로그인이 진행되는 로직
       loginBtn.addEventListener("click", function (event) {
@@ -42,12 +28,36 @@
         login();
       });
       // enter을 눌러도 로그인이 진행되게 하는 로직
-      loginPw.addEventListener("keyup", function (event) {
+      userPwInput.addEventListener("keyup", function (event) {
         if (event.keyCode === 13) {
           event.preventDefault();
           login();
         }
       });
+
+      //함수 ---------------------------------------------------------
+      //로그인
+      function login() {
+        const account = JSON.parse(localStorage.getItem(userIdInput.value));
+        if (!account) {
+          alert();
+          return;
+        }
+
+        const localName = account.name;
+        const localId = account.id;
+        const localPw = account.password;
+
+        if (userIdInput.value === localId && userPwInput.value === localPw) {
+          alert(localName + "님 로그인되었습니다");
+          // 로그인 완료 페이지 이동
+          location.href =
+            "http://127.0.0.1:5500/test/2022.12/12.7/loginSuccess.html";
+        } else {
+          alert("아이디, 비밀번호를 확인하여 주세요.");
+          userIdInput.focus();
+        }
+      }
     </script>
   </body>
 </html>
