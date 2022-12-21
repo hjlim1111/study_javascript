@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체연습</title>
+  </head>
+  <body>
+    <script>
+      const country = {
+        korea: {
+          seoul: ["songpa", "gangnam", "mapo"],
+          daegu: ["suseong", "seongseo", "dongseonglo"],
+          jinju: ["insa", "hadae", "sinan"],
+        },
+      };
+
+      localStorage.setItem("country", JSON.stringify(country));
+
+      const country2 = JSON.parse(localStorage.getItem("country"));
+
+      //진주에 있는 값 찾기
+      country2.korea.jinju;
+    </script>
+  </body>
+</html>
